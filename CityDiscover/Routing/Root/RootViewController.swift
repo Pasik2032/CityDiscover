@@ -11,9 +11,11 @@ import CDUIKit
 final class RootViewController: UIViewController {
 
   private var current: UIViewController
+  private let coordinator: FlowCoordinatorProtocol
 
   init() {
     self.current = SplashViewController()
+    coordinator = Assembly.resolver.resolve(FlowCoordinatorProtocol.self)!
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -24,10 +26,8 @@ final class RootViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     Mode.shared.setRoot(self)
-    addChild(current)
-    current.view.frame = view.bounds
-    view.addSubview(current.view)
-    current.didMove(toParent: self)
+    setupCurrent()
+    coordinator.start(in: self)
   }
 
   func show(_ vc: UIViewController) {
@@ -38,6 +38,13 @@ final class RootViewController: UIViewController {
     let mainViewController = MainViewController()
     let mainScreen = UINavigationController(rootViewController: mainViewController)
     animateFadeTransition(to: mainScreen)
+  }
+
+  private func setupCurrent() {
+    addChild(current)
+    current.view.frame = view.bounds
+    view.addSubview(current.view)
+    current.didMove(toParent: self)
   }
 
   private func animateDismissTransition(to new: UIViewController, completion: (() -> Void)? = nil) {

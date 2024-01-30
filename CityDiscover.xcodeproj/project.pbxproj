@@ -11,6 +11,9 @@
 		E316F8DE2B1F52EE007D2945 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316F8DD2B1F52EE007D2945 /* SplashViewController.swift */; };
 		E316F8E12B1F5395007D2945 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316F8E02B1F5395007D2945 /* LoginViewController.swift */; };
 		E316F8E32B1F53B9007D2945 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316F8E22B1F53B9007D2945 /* MainViewController.swift */; };
+		E319BA3C2B6BC57300190321 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA3B2B6BC57300190321 /* FlowCoordinator.swift */; };
+		E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */; };
+		E319BA442B6BFF6400190321 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA432B6BFF6400190321 /* Assembly.swift */; };
 		E3B40FA52B668152006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA42B668152006F2316 /* CDUIKit */; };
 		E3B40FA92B6681C3006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA82B6681C3006F2316 /* CDUIKit */; };
 		E3DCF4622B6955F400057BEB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E3DCF4612B6955F400057BEB /* Lottie */; };
@@ -21,6 +24,8 @@
 		E3DCF4832B6AD80C00057BEB /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DCF4822B6AD80C00057BEB /* Mode.swift */; };
 		E3DCF4852B6ADA5600057BEB /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DCF4842B6ADA5600057BEB /* Animations.swift */; };
 		E3DCF4882B6ADBF300057BEB /* findMapD.json in Resources */ = {isa = PBXBuildFile; fileRef = E3DCF4872B6ADBF300057BEB /* findMapD.json */; };
+		E3F0C6CC2B69584D00AB6A64 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = E3F0C6CB2B69584D00AB6A64 /* Swinject */; };
+		E3F0C6CE2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */; };
 		E3F0D8252B1FB54000877580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0D8242B1FB54000877580 /* AppDelegate.swift */; };
 		E3F0D8272B1FB54000877580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0D8262B1FB54000877580 /* SceneDelegate.swift */; };
 		E3F0D8292B1FB54000877580 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0D8282B1FB54000877580 /* RootViewController.swift */; };
@@ -33,6 +38,9 @@
 		E316F8DD2B1F52EE007D2945 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		E316F8E02B1F5395007D2945 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E316F8E22B1F53B9007D2945 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E319BA3B2B6BC57300190321 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
+		E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		E319BA432B6BFF6400190321 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		E3B40FA62B6681AC006F2316 /* CDUIKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDUIKit; sourceTree = SOURCE_ROOT; };
 		E3DCF4672B69629B00057BEB /* findMapL.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = findMapL.json; sourceTree = "<group>"; };
 		E3DCF47D2B6AD62E00057BEB /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
@@ -40,6 +48,7 @@
 		E3DCF4822B6AD80C00057BEB /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		E3DCF4842B6ADA5600057BEB /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		E3DCF4872B6ADBF300057BEB /* findMapD.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = findMapD.json; sourceTree = "<group>"; };
+		E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.Assembly.swift; sourceTree = "<group>"; };
 		E3F0D8212B1FB54000877580 /* CityDiscover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityDiscover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F0D8242B1FB54000877580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F0D8262B1FB54000877580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B40FA92B6681C3006F2316 /* CDUIKit in Frameworks */,
+				E3F0C6CC2B69584D00AB6A64 /* Swinject in Frameworks */,
 				E3DCF47A2B6ACE4500057BEB /* SnapKit in Frameworks */,
 				E3B40FA52B668152006F2316 /* CDUIKit in Frameworks */,
 				E3DCF4622B6955F400057BEB /* Lottie in Frameworks */,
@@ -74,6 +84,7 @@
 		E319BA342B6AE2B700190321 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				E319BA3A2B6BC55800190321 /* Coordinator */,
 				E319BA392B6BC41400190321 /* Root */,
 				E319BA382B6AE4AB00190321 /* Launch */,
 			);
@@ -114,6 +125,24 @@
 				E3F0D8282B1FB54000877580 /* RootViewController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		E319BA3A2B6BC55800190321 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E319BA3B2B6BC57300190321 /* FlowCoordinator.swift */,
+				E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */,
+				E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E319BA422B6BFF6400190321 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E319BA432B6BFF6400190321 /* Assembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		E3DCF47B2B6AD5FB00057BEB /* UI */ = {
@@ -173,6 +202,7 @@
 		E3F0D8232B1FB54000877580 /* CityDiscover */ = {
 			isa = PBXGroup;
 			children = (
+				E319BA422B6BFF6400190321 /* Assembly */,
 				E319BA362B6AE36100190321 /* System */,
 				E319BA352B6AE30B00190321 /* Resources */,
 				E319BA342B6AE2B700190321 /* Routing */,
@@ -205,6 +235,7 @@
 				E3B40FA82B6681C3006F2316 /* CDUIKit */,
 				E3DCF4612B6955F400057BEB /* Lottie */,
 				E3DCF4792B6ACE4500057BEB /* SnapKit */,
+				E3F0C6CB2B69584D00AB6A64 /* Swinject */,
 			);
 			productName = CityDiscover;
 			productReference = E3F0D8212B1FB54000877580 /* CityDiscover.app */;
@@ -238,6 +269,7 @@
 				E3B40FA72B6681C3006F2316 /* XCLocalSwiftPackageReference "CDUIKit" */,
 				E3DCF4602B6955F400057BEB /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				E3DCF4782B6ACE4500057BEB /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E3F0C6CA2B69584D00AB6A64 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = E3F0D8222B1FB54000877580 /* Products */;
 			projectDirPath = "";
@@ -270,13 +302,17 @@
 				E316F8E32B1F53B9007D2945 /* MainViewController.swift in Sources */,
 				E316F8E12B1F5395007D2945 /* LoginViewController.swift in Sources */,
 				E3DCF4802B6AD71B00057BEB /* Lottie + Animation.swift in Sources */,
+				E319BA442B6BFF6400190321 /* Assembly.swift in Sources */,
 				E3DCF47E2B6AD62E00057BEB /* Animation.swift in Sources */,
 				E316F8DC2B1F4FF7007D2945 /* AppDelegate+Root.swift in Sources */,
 				E3F0D8292B1FB54000877580 /* RootViewController.swift in Sources */,
 				E3DCF4832B6AD80C00057BEB /* Mode.swift in Sources */,
 				E3F0D8252B1FB54000877580 /* AppDelegate.swift in Sources */,
+				E319BA3C2B6BC57300190321 /* FlowCoordinator.swift in Sources */,
 				E3F0D8272B1FB54000877580 /* SceneDelegate.swift in Sources */,
 				E3DCF4852B6ADA5600057BEB /* Animations.swift in Sources */,
+				E3F0C6CE2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift in Sources */,
+				E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */,
 				E316F8DE2B1F52EE007D2945 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +553,14 @@
 				minimumVersion = 5.7.0;
 			};
 		};
+		E3F0C6CA2B69584D00AB6A64 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -537,6 +581,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E3DCF4782B6ACE4500057BEB /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		E3F0C6CB2B69584D00AB6A64 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3F0C6CA2B69584D00AB6A64 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
