@@ -6,12 +6,15 @@
 //
 
 import Swinject
+import Authorization
 
 extension FlowCoordinator {
   struct Assembly: Swinject.Assembly {
     func assemble(container: Swinject.Container) {
-      container.register(FlowCoordinatorProtocol.self) { _ in
-        FlowCoordinator()
+      container.register(FlowCoordinatorProtocol.self) {
+        FlowCoordinator(
+          authorization: $0.resolve(AuthorizationServiceProtocol.self)!
+        )
       }.inObjectScope(.container)
     }
   }

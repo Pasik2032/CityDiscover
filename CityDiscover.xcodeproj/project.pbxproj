@@ -26,6 +26,8 @@
 		E3DCF4882B6ADBF300057BEB /* findMapD.json in Resources */ = {isa = PBXBuildFile; fileRef = E3DCF4872B6ADBF300057BEB /* findMapD.json */; };
 		E3F0C6CC2B69584D00AB6A64 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = E3F0C6CB2B69584D00AB6A64 /* Swinject */; };
 		E3F0C6CE2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */; };
+		E3F0C6D22B69628F00AB6A64 /* Authorization in Frameworks */ = {isa = PBXBuildFile; productRef = E3F0C6D12B69628F00AB6A64 /* Authorization */; };
+		E3F0C6D52B6962AA00AB6A64 /* Authorization in Frameworks */ = {isa = PBXBuildFile; productRef = E3F0C6D42B6962AA00AB6A64 /* Authorization */; };
 		E3F0D8252B1FB54000877580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0D8242B1FB54000877580 /* AppDelegate.swift */; };
 		E3F0D8272B1FB54000877580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0D8262B1FB54000877580 /* SceneDelegate.swift */; };
 		E3F0D8292B1FB54000877580 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0D8282B1FB54000877580 /* RootViewController.swift */; };
@@ -49,6 +51,7 @@
 		E3DCF4842B6ADA5600057BEB /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		E3DCF4872B6ADBF300057BEB /* findMapD.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = findMapD.json; sourceTree = "<group>"; };
 		E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.Assembly.swift; sourceTree = "<group>"; };
+		E3F0C6CF2B695E1100AB6A64 /* Authorization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Authorization; sourceTree = "<group>"; };
 		E3F0D8212B1FB54000877580 /* CityDiscover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityDiscover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F0D8242B1FB54000877580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F0D8262B1FB54000877580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 				E3F0C6CC2B69584D00AB6A64 /* Swinject in Frameworks */,
 				E3DCF47A2B6ACE4500057BEB /* SnapKit in Frameworks */,
 				E3B40FA52B668152006F2316 /* CDUIKit in Frameworks */,
+				E3F0C6D52B6962AA00AB6A64 /* Authorization in Frameworks */,
+				E3F0C6D22B69628F00AB6A64 /* Authorization in Frameworks */,
 				E3DCF4622B6955F400057BEB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,12 +187,21 @@
 			path = JSONs;
 			sourceTree = "<group>";
 		};
+		E3F0C6D02B69628F00AB6A64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E3F0D8182B1FB53F00877580 = {
 			isa = PBXGroup;
 			children = (
+				E3F0C6CF2B695E1100AB6A64 /* Authorization */,
 				E3B40FA62B6681AC006F2316 /* CDUIKit */,
 				E3F0D8232B1FB54000877580 /* CityDiscover */,
 				E3F0D8222B1FB54000877580 /* Products */,
+				E3F0C6D02B69628F00AB6A64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,6 +250,8 @@
 				E3DCF4612B6955F400057BEB /* Lottie */,
 				E3DCF4792B6ACE4500057BEB /* SnapKit */,
 				E3F0C6CB2B69584D00AB6A64 /* Swinject */,
+				E3F0C6D12B69628F00AB6A64 /* Authorization */,
+				E3F0C6D42B6962AA00AB6A64 /* Authorization */,
 			);
 			productName = CityDiscover;
 			productReference = E3F0D8212B1FB54000877580 /* CityDiscover.app */;
@@ -270,6 +286,7 @@
 				E3DCF4602B6955F400057BEB /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				E3DCF4782B6ACE4500057BEB /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E3F0C6CA2B69584D00AB6A64 /* XCRemoteSwiftPackageReference "Swinject" */,
+				E3F0C6D32B6962AA00AB6A64 /* XCLocalSwiftPackageReference "Authorization" */,
 			);
 			productRefGroup = E3F0D8222B1FB54000877580 /* Products */;
 			projectDirPath = "";
@@ -534,6 +551,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = CDUIKit;
 		};
+		E3F0C6D32B6962AA00AB6A64 /* XCLocalSwiftPackageReference "Authorization" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Authorization;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -586,6 +607,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E3F0C6CA2B69584D00AB6A64 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		E3F0C6D12B69628F00AB6A64 /* Authorization */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Authorization;
+		};
+		E3F0C6D42B6962AA00AB6A64 /* Authorization */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Authorization;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

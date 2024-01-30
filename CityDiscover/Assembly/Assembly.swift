@@ -6,10 +6,12 @@
 //
 
 import Swinject
+import Authorization
 
 public final class Assembly {
   private static let assemblies: [Swinject.Assembly] = [
     FlowCoordinator.Assembly(),
+    Authorization.AssemblyModule(),
   ]
 
   private static let container = Container()
