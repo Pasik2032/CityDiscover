@@ -24,37 +24,20 @@ final class RootViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     Mode.shared.setRoot(self)
-    // Do any additional setup after loading the view.
-    addChild(current)               // 1
-    current.view.frame = view.bounds              // 2
-    view.addSubview(current.view)                 // 3
-    current.didMove(toParent: self) // 4
-//    view.backgroundColor = .red
-    print("aaaaa")
+    addChild(current)
+    current.view.frame = view.bounds
+    view.addSubview(current.view)
+    current.didMove(toParent: self)
   }
 
-  func showLoginScreen() {
-    let new = UINavigationController(rootViewController: LoginViewController())
-    addChild(new)
-    new.view.frame = view.bounds
-    view.addSubview(new.view)
-    new.didMove(toParent: self)
-    current.willMove(toParent: nil)
-    current.view.removeFromSuperview()
-    current.removeFromParent()
-    current = new
+  func show(_ vc: UIViewController) {
+    animateFadeTransition(to: vc)
   }
 
   func switchToMainScreen() {
     let mainViewController = MainViewController()
     let mainScreen = UINavigationController(rootViewController: mainViewController)
     animateFadeTransition(to: mainScreen)
-  }
-
-  func switchToLogout() {
-    let loginViewController = LoginViewController()
-    let logoutScreen = UINavigationController(rootViewController: loginViewController)
-    animateDismissTransition(to: logoutScreen)
   }
 
   private func animateDismissTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
@@ -80,7 +63,7 @@ final class RootViewController: UIViewController {
       self.current.removeFromParent()
       new.didMove(toParent: self)
       self.current = new
-      completion?()  //1
+      completion?()
     }
   }
 

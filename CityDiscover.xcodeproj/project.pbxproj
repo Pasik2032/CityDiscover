@@ -64,6 +64,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E319BA332B6AE2AB00190321 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		E319BA342B6AE2B700190321 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				E319BA392B6BC41400190321 /* Root */,
+				E319BA382B6AE4AB00190321 /* Launch */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		E319BA352B6AE30B00190321 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3F0D82D2B1FB54200877580 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E319BA362B6AE36100190321 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				E3F0D8322B1FB54200877580 /* Info.plist */,
+				E3F0D8262B1FB54000877580 /* SceneDelegate.swift */,
+				E3F0D8242B1FB54000877580 /* AppDelegate.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		E319BA382B6AE4AB00190321 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				E316F8DD2B1F52EE007D2945 /* SplashViewController.swift */,
+				E3F0D82F2B1FB54200877580 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		E319BA392B6BC41400190321 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				E316F8DB2B1F4FF7007D2945 /* AppDelegate+Root.swift */,
+				E3F0D8282B1FB54000877580 /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		E3DCF47B2B6AD5FB00057BEB /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,15 +173,11 @@
 		E3F0D8232B1FB54000877580 /* CityDiscover */ = {
 			isa = PBXGroup;
 			children = (
+				E319BA362B6AE36100190321 /* System */,
+				E319BA352B6AE30B00190321 /* Resources */,
+				E319BA342B6AE2B700190321 /* Routing */,
+				E319BA332B6AE2AB00190321 /* Module */,
 				E3DCF47B2B6AD5FB00057BEB /* UI */,
-				E3F0D8242B1FB54000877580 /* AppDelegate.swift */,
-				E3F0D8262B1FB54000877580 /* SceneDelegate.swift */,
-				E3F0D8282B1FB54000877580 /* RootViewController.swift */,
-				E3F0D82D2B1FB54200877580 /* Assets.xcassets */,
-				E3F0D82F2B1FB54200877580 /* LaunchScreen.storyboard */,
-				E3F0D8322B1FB54200877580 /* Info.plist */,
-				E316F8DB2B1F4FF7007D2945 /* AppDelegate+Root.swift */,
-				E316F8DD2B1F52EE007D2945 /* SplashViewController.swift */,
 				E316F8E02B1F5395007D2945 /* LoginViewController.swift */,
 				E316F8E22B1F53B9007D2945 /* MainViewController.swift */,
 			);
@@ -375,7 +423,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = LJQ6356456;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CityDiscover/Info.plist;
+				INFOPLIST_FILE = CityDiscover/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -403,7 +451,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = LJQ6356456;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CityDiscover/Info.plist;
+				INFOPLIST_FILE = CityDiscover/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
