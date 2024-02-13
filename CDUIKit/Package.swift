@@ -5,18 +5,23 @@ import PackageDescription
 
 let package = Package(
     name: "CDUIKit",
-    platforms: [.iOS(.v13)],
+    platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "CDUIKit",
             targets: ["CDUIKit"]),
     ],
+    dependencies: [
+      .package(url: "https://github.com/SnapKit/SnapKit.git", .upToNextMajor(from: "5.0.1")),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "CDUIKit"),
+            name: "CDUIKit",
+            dependencies: ["SnapKit"]
+        ),
         .testTarget(
             name: "CDUIKitTests",
             dependencies: ["CDUIKit"]),

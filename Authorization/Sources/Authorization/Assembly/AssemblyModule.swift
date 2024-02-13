@@ -10,6 +10,7 @@ import Swinject
 public struct AssemblyModule: Swinject.Assembly {
   private let assemblys: [Swinject.Assembly] = [
     AuthorizationService.Assembly(),
+    SecretStore.Assembly(),
   ]
 
   public func assemble(container: Swinject.Container) {

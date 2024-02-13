@@ -11,8 +11,8 @@ extension AuthorizationService {
   struct Assembly: Swinject.Assembly {
 
     func assemble(container: Swinject.Container) {
-      container.register(AuthorizationServiceProtocol.self) { _ in
-        AuthorizationService()
+      container.register(AuthorizationServiceProtocol.self) {
+        AuthorizationService(secretStore: $0.resolve(SecretStoreProtocol.self)!)
       }
     }
   }

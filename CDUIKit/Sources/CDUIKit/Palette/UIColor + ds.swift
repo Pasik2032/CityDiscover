@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIColor {
-  public static func ds(_ color: Color) -> UIColor {
+  public static func ds(_ color: ItemColor) -> UIColor {
     color.value
   }
 }

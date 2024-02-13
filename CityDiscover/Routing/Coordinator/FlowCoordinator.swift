@@ -6,6 +6,7 @@
 //
 
 import Authorization
+import Foundation
 
 final class FlowCoordinator {
   private var root: RootViewController!
@@ -21,6 +22,9 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
   func start(in root: RootViewController) {
     self.root = root
 
-    
+//    DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+      let vc = Authorization.Core.login()
+      self.root.show(vc)
+//    }
   }
 }

@@ -6,11 +6,16 @@
 //
 
 final class AuthorizationService {
+  private let secretStore: SecretStoreProtocol
 
+  init(secretStore: SecretStoreProtocol) {
+    self.secretStore = secretStore
+  }
 }
 
 extension AuthorizationService: AuthorizationServiceProtocol {
   var isLogin: Bool {
-    true
+    let token = try? secretStore.get(.token)
+    return token != nil
   }
 }

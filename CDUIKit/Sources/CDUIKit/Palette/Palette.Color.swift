@@ -8,7 +8,7 @@
 import UIKit
 
 /// Структура описывающая цвет
-public struct Color {
+public struct ItemColor {
   private let light: UIColor
   private let dark: UIColor
 
