@@ -7,13 +7,13 @@
 
 import UIKit
 import CDUIKit
-import Lottie
 import SnapKit
+import Animation
 
 final class SplashViewController: UIViewController {
 
-  private lazy var lottie: LottieAnimationView = {
-    let lottie = LottieAnimationView(.findMap)
+  private lazy var lottie: AnimationView = {
+    let lottie = AnimationView(.findMap)
     lottie.contentMode = .scaleAspectFit
     lottie.loopMode = .loop
     lottie.animationSpeed = 0.5

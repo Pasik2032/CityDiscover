@@ -14,16 +14,11 @@
 		E319BA3C2B6BC57300190321 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA3B2B6BC57300190321 /* FlowCoordinator.swift */; };
 		E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */; };
 		E319BA442B6BFF6400190321 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA432B6BFF6400190321 /* Assembly.swift */; };
+		E39CE4DE2B7C12DE00928201 /* Animation in Frameworks */ = {isa = PBXBuildFile; productRef = E39CE4DD2B7C12DE00928201 /* Animation */; };
 		E3B40FA52B668152006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA42B668152006F2316 /* CDUIKit */; };
 		E3B40FA92B6681C3006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA82B6681C3006F2316 /* CDUIKit */; };
-		E3DCF4622B6955F400057BEB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E3DCF4612B6955F400057BEB /* Lottie */; };
-		E3DCF4682B69629B00057BEB /* findMapL.json in Resources */ = {isa = PBXBuildFile; fileRef = E3DCF4672B69629B00057BEB /* findMapL.json */; };
 		E3DCF47A2B6ACE4500057BEB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3DCF4792B6ACE4500057BEB /* SnapKit */; };
-		E3DCF47E2B6AD62E00057BEB /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DCF47D2B6AD62E00057BEB /* Animation.swift */; };
-		E3DCF4802B6AD71B00057BEB /* Lottie + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DCF47F2B6AD71B00057BEB /* Lottie + Animation.swift */; };
 		E3DCF4832B6AD80C00057BEB /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DCF4822B6AD80C00057BEB /* Mode.swift */; };
-		E3DCF4852B6ADA5600057BEB /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DCF4842B6ADA5600057BEB /* Animations.swift */; };
-		E3DCF4882B6ADBF300057BEB /* findMapD.json in Resources */ = {isa = PBXBuildFile; fileRef = E3DCF4872B6ADBF300057BEB /* findMapD.json */; };
 		E3F0C6CC2B69584D00AB6A64 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = E3F0C6CB2B69584D00AB6A64 /* Swinject */; };
 		E3F0C6CE2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */; };
 		E3F0C6D22B69628F00AB6A64 /* Authorization in Frameworks */ = {isa = PBXBuildFile; productRef = E3F0C6D12B69628F00AB6A64 /* Authorization */; };
@@ -43,13 +38,9 @@
 		E319BA3B2B6BC57300190321 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		E319BA432B6BFF6400190321 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		E39CE4DB2B7C0F7500928201 /* Animation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Animation; sourceTree = "<group>"; };
 		E3B40FA62B6681AC006F2316 /* CDUIKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDUIKit; sourceTree = SOURCE_ROOT; };
-		E3DCF4672B69629B00057BEB /* findMapL.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = findMapL.json; sourceTree = "<group>"; };
-		E3DCF47D2B6AD62E00057BEB /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		E3DCF47F2B6AD71B00057BEB /* Lottie + Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lottie + Animation.swift"; sourceTree = "<group>"; };
 		E3DCF4822B6AD80C00057BEB /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
-		E3DCF4842B6ADA5600057BEB /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
-		E3DCF4872B6ADBF300057BEB /* findMapD.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = findMapD.json; sourceTree = "<group>"; };
 		E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.Assembly.swift; sourceTree = "<group>"; };
 		E3F0C6CF2B695E1100AB6A64 /* Authorization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Authorization; sourceTree = "<group>"; };
 		E3F0D8212B1FB54000877580 /* CityDiscover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityDiscover.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,11 +59,11 @@
 			files = (
 				E3B40FA92B6681C3006F2316 /* CDUIKit in Frameworks */,
 				E3F0C6CC2B69584D00AB6A64 /* Swinject in Frameworks */,
+				E39CE4DE2B7C12DE00928201 /* Animation in Frameworks */,
 				E3DCF47A2B6ACE4500057BEB /* SnapKit in Frameworks */,
 				E3B40FA52B668152006F2316 /* CDUIKit in Frameworks */,
 				E3F0C6D52B6962AA00AB6A64 /* Authorization in Frameworks */,
 				E3F0C6D22B69628F00AB6A64 /* Authorization in Frameworks */,
-				E3DCF4622B6955F400057BEB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,20 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				E3DCF4812B6AD7F100057BEB /* Thema */,
-				E3DCF47C2B6AD61400057BEB /* Animation */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		E3DCF47C2B6AD61400057BEB /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-				E3DCF4862B6ADA8600057BEB /* JSONs */,
-				E3DCF4842B6ADA5600057BEB /* Animations.swift */,
-				E3DCF47D2B6AD62E00057BEB /* Animation.swift */,
-				E3DCF47F2B6AD71B00057BEB /* Lottie + Animation.swift */,
-			);
-			path = Animation;
 			sourceTree = "<group>";
 		};
 		E3DCF4812B6AD7F100057BEB /* Thema */ = {
@@ -176,15 +155,6 @@
 				E3DCF4822B6AD80C00057BEB /* Mode.swift */,
 			);
 			path = Thema;
-			sourceTree = "<group>";
-		};
-		E3DCF4862B6ADA8600057BEB /* JSONs */ = {
-			isa = PBXGroup;
-			children = (
-				E3DCF4872B6ADBF300057BEB /* findMapD.json */,
-				E3DCF4672B69629B00057BEB /* findMapL.json */,
-			);
-			path = JSONs;
 			sourceTree = "<group>";
 		};
 		E3F0C6D02B69628F00AB6A64 /* Frameworks */ = {
@@ -197,6 +167,7 @@
 		E3F0D8182B1FB53F00877580 = {
 			isa = PBXGroup;
 			children = (
+				E39CE4DB2B7C0F7500928201 /* Animation */,
 				E3F0C6CF2B695E1100AB6A64 /* Authorization */,
 				E3B40FA62B6681AC006F2316 /* CDUIKit */,
 				E3F0D8232B1FB54000877580 /* CityDiscover */,
@@ -247,11 +218,11 @@
 			packageProductDependencies = (
 				E3B40FA42B668152006F2316 /* CDUIKit */,
 				E3B40FA82B6681C3006F2316 /* CDUIKit */,
-				E3DCF4612B6955F400057BEB /* Lottie */,
 				E3DCF4792B6ACE4500057BEB /* SnapKit */,
 				E3F0C6CB2B69584D00AB6A64 /* Swinject */,
 				E3F0C6D12B69628F00AB6A64 /* Authorization */,
 				E3F0C6D42B6962AA00AB6A64 /* Authorization */,
+				E39CE4DD2B7C12DE00928201 /* Animation */,
 			);
 			productName = CityDiscover;
 			productReference = E3F0D8212B1FB54000877580 /* CityDiscover.app */;
@@ -283,10 +254,10 @@
 			mainGroup = E3F0D8182B1FB53F00877580;
 			packageReferences = (
 				E3B40FA72B6681C3006F2316 /* XCLocalSwiftPackageReference "CDUIKit" */,
-				E3DCF4602B6955F400057BEB /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				E3DCF4782B6ACE4500057BEB /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E3F0C6CA2B69584D00AB6A64 /* XCRemoteSwiftPackageReference "Swinject" */,
 				E3F0C6D32B6962AA00AB6A64 /* XCLocalSwiftPackageReference "Authorization" */,
+				E39CE4DC2B7C12DE00928201 /* XCLocalSwiftPackageReference "Animation" */,
 			);
 			productRefGroup = E3F0D8222B1FB54000877580 /* Products */;
 			projectDirPath = "";
@@ -302,10 +273,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3DCF4882B6ADBF300057BEB /* findMapD.json in Resources */,
 				E3F0D8312B1FB54200877580 /* LaunchScreen.storyboard in Resources */,
 				E3F0D82E2B1FB54200877580 /* Assets.xcassets in Resources */,
-				E3DCF4682B69629B00057BEB /* findMapL.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,16 +287,13 @@
 			files = (
 				E316F8E32B1F53B9007D2945 /* MainViewController.swift in Sources */,
 				E316F8E12B1F5395007D2945 /* LoginViewController.swift in Sources */,
-				E3DCF4802B6AD71B00057BEB /* Lottie + Animation.swift in Sources */,
 				E319BA442B6BFF6400190321 /* Assembly.swift in Sources */,
-				E3DCF47E2B6AD62E00057BEB /* Animation.swift in Sources */,
 				E316F8DC2B1F4FF7007D2945 /* AppDelegate+Root.swift in Sources */,
 				E3F0D8292B1FB54000877580 /* RootViewController.swift in Sources */,
 				E3DCF4832B6AD80C00057BEB /* Mode.swift in Sources */,
 				E3F0D8252B1FB54000877580 /* AppDelegate.swift in Sources */,
 				E319BA3C2B6BC57300190321 /* FlowCoordinator.swift in Sources */,
 				E3F0D8272B1FB54000877580 /* SceneDelegate.swift in Sources */,
-				E3DCF4852B6ADA5600057BEB /* Animations.swift in Sources */,
 				E3F0C6CE2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift in Sources */,
 				E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */,
 				E316F8DE2B1F52EE007D2945 /* SplashViewController.swift in Sources */,
@@ -547,6 +513,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		E39CE4DC2B7C12DE00928201 /* XCLocalSwiftPackageReference "Animation" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Animation;
+		};
 		E3B40FA72B6681C3006F2316 /* XCLocalSwiftPackageReference "CDUIKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = CDUIKit;
@@ -558,14 +528,6 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E3DCF4602B6955F400057BEB /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.4.0;
-			};
-		};
 		E3DCF4782B6ACE4500057BEB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -585,6 +547,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E39CE4DD2B7C12DE00928201 /* Animation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Animation;
+		};
 		E3B40FA42B668152006F2316 /* CDUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CDUIKit;
@@ -592,11 +558,6 @@
 		E3B40FA82B6681C3006F2316 /* CDUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CDUIKit;
-		};
-		E3DCF4612B6955F400057BEB /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E3DCF4602B6955F400057BEB /* XCRemoteSwiftPackageReference "lottie-spm" */;
-			productName = Lottie;
 		};
 		E3DCF4792B6ACE4500057BEB /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
