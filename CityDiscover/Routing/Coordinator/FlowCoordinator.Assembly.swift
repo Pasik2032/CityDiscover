@@ -13,7 +13,7 @@ extension FlowCoordinator {
     func assemble(container: Swinject.Container) {
       container.register(FlowCoordinatorProtocol.self) {
         FlowCoordinator(
-          authorization: $0.resolve(AuthorizationServiceProtocol.self)!
+          authorization: $0.resolve(AuthorizationProtocol.self)!
         )
       }.inObjectScope(.container)
     }

@@ -1,17 +1,28 @@
 //
 //  CodeViewController.swift
+//  CityDiscover
 //
-//
-//  Created by Даниил Пасилецкий on 13.02.2024.
+//  Created Даниил Пасилецкий on 11.03.2024.
+//  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
-import CDUIKit
 import SnapKit
+import CDUIKit
+
+protocol CodeViewInput: AnyObject {
+
+}
+
+protocol CodeViewOutput: AnyObject {
+  func viewDidLoad()
+  func codeDidSend(_ code: String)
+}
+
 
 final class CodeViewController: UIViewController {
 
-  private var bottom: Constraint?
+  // MARK: - UI
 
   private lazy var label: UILabel = {
     let label = UILabel()
@@ -25,7 +36,7 @@ final class CodeViewController: UIViewController {
   private lazy var descriptionLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 15.0)
-    label.text = "Вам на email был отправлен код, введите его сюда пожалуйста!"
+    label.text = "Вам на \(emailText) был отправлен код, введите его сюда пожалуйста!"
     label.textColor = .ds(.text)
     label.numberOfLines = 0
     return label
@@ -37,16 +48,36 @@ final class CodeViewController: UIViewController {
     return codeField
   }()
 
+
+  // MARK: - Properties
+
+  var presenter: CodeViewOutput?
+  var emailText: String = "email"
+
+  // MARK: - UIViewController
+
   override func viewDidLoad() {
+    self.navigationItem.backBarButtonItem?.title = "Назад"
+    navigationController?.navigationBar.barTintColor = .white
     super.viewDidLoad()
-    configUI()
-    keyboardObserver()
+    setupUI()
+    configAction()
     codeField.startInput()
+    presenter?.viewDidLoad()
   }
 
-  private func configUI() {
+  // MARK: - Actions
+
+  private func configAction() {
+    codeField.doAfterCodeDidEnter = { code in
+      self.presenter?.codeDidSend(code)
+    }
+  }
+
+  // MARK: - Setup
+
+  private func setupUI() {
     view.backgroundColor = .ds(.mainBackground)
-    view.layer.cornerRadius = 15.0
     view.addSubviews([
       codeField,
       label,
@@ -54,7 +85,7 @@ final class CodeViewController: UIViewController {
     ])
 
     label.snp.makeConstraints {
-      $0.top.equalToSuperview().inset(30.0)
+      $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
       $0.leading.trailing.equalToSuperview().inset(16.0)
     }
 
@@ -68,35 +99,12 @@ final class CodeViewController: UIViewController {
       $0.top.equalTo(descriptionLabel.snp.bottom).inset(-30.0)
       $0.leadingMargin.trailingMargin.equalTo(40)
       $0.height.equalTo(40.0)
-      bottom = $0.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(30.0).constraint
     }
   }
+}
 
-  private func keyboardObserver() {
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(keyboardWillDisappear),
-      name: UIResponder.keyboardWillHideNotification,
-      object: nil
-    )
+// MARK: - CodeViewInput
 
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(keyboardWillAppear),
-      name: UIResponder.keyboardWillShowNotification,
-      object: nil
-    )
-  }
+extension CodeViewController: CodeViewInput {
 
-  @objc func keyboardWillDisappear() {
-    bottom?.update(inset: 16.0)
-    parent?.view.layoutIfNeeded()
-  }
-
-  @objc func keyboardWillAppear(_ notification: Notification) {
-    guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-    let keyboarHeight = keyboardFrame.cgRectValue.height
-    bottom?.update(inset: keyboarHeight)
-    parent?.view.layoutIfNeeded()
-  }
 }

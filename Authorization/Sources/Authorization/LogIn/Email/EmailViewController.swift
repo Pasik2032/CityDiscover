@@ -1,18 +1,28 @@
 //
 //  EmailViewController.swift
+//  CityDiscover
 //
-//
-//  Created by Даниил Пасилецкий on 01.02.2024.
+//  Created Даниил Пасилецкий on 11.03.2024.
+//  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
 import CDUIKit
 import SnapKit
-import SwiftUI
 
-final class EmailViewController: UIViewController {
+protocol EmailViewInput: AnyObject {
 
-  private var bottom: Constraint?
+}
+
+protocol EmailViewOutput: AnyObject {
+  func viewDidLoad()
+  func emailNextDidPressed(email: String)
+}
+
+
+final class EmailViewController: ViewController {
+
+  // MARK: - UI
 
   private lazy var titleLabel: UILabel = {
     let label = UILabel()
@@ -48,46 +58,32 @@ final class EmailViewController: UIViewController {
     return button
   }()
 
-  @objc private func buttonDidPressed() {
-    guard textField.validate() else { return }
-  }
+  // MARK: - Properties
+
+  var presenter: EmailViewOutput?
+  private var bottom: Constraint?
+
+  // MARK: - UIViewController
 
   override func viewDidLoad() {
+    self.navigationItem.backBarButtonItem?.title = "Назад"
+    navigationController?.navigationBar.barTintColor = .white
     super.viewDidLoad()
-    configureUI()
-    keyboardObserver()
+    hideKeyboardWhenTappedAround()
+    setupUI()
+    presenter?.viewDidLoad()
   }
 
+  // MARK: - Actions
 
-  private func keyboardObserver() {
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(keyboardWillDisappear),
-      name: UIResponder.keyboardWillHideNotification,
-      object: nil
-    )
-
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(keyboardWillAppear),
-      name: UIResponder.keyboardWillShowNotification,
-      object: nil
-    )
+  @objc private func buttonDidPressed() {
+    guard textField.validate(), let text = textField.text else { return }
+    presenter?.emailNextDidPressed(email: text)
   }
 
-  @objc func keyboardWillDisappear() {
-    bottom?.update(inset: 16.0)
-    parent?.view.layoutIfNeeded()
-  }
+  // MARK: - Setup
 
-  @objc func keyboardWillAppear(_ notification: Notification) {
-    guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-    let keyboarHeight = keyboardFrame.cgRectValue.height
-    bottom?.update(inset: keyboarHeight)
-    parent?.view.layoutIfNeeded()
-  }
-
-  private func configureUI() {
+  private func setupUI() {
     view.backgroundColor = .ds(.mainBackground)
     view.layer.cornerRadius = 15.0
     view.addSubviews([
@@ -105,12 +101,11 @@ final class EmailViewController: UIViewController {
 
     textField.snp.makeConstraints {
       $0.leading.trailing.equalToSuperview().inset(16.0)
-      $0.bottom.equalTo(button.snp.top).offset(-32.0)
       $0.top.equalTo(descriptionLabel.snp.bottom).inset(-30.0)
     }
 
     titleLabel.snp.makeConstraints {
-      $0.top.equalToSuperview().inset(30.0)
+      $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
       $0.leading.trailing.equalToSuperview().inset(16.0)
     }
 
@@ -119,4 +114,22 @@ final class EmailViewController: UIViewController {
       $0.leading.trailing.equalToSuperview().inset(16.0)
     }
   }
+
+  // MARK: - Keyboard
+
+  override func keyboardWillShow(height: CGFloat) {
+    bottom?.update(inset: height)
+    view.layoutIfNeeded()
+  }
+
+  override func keyboardWillHidden() {
+    bottom?.update(inset: 30.0)
+    view.layoutIfNeeded()
+  }
+}
+
+// MARK: - EmailViewInput
+
+extension EmailViewController: EmailViewInput {
+
 }

@@ -7,13 +7,14 @@
 
 import Authorization
 import Foundation
+import UIKit
 
 final class FlowCoordinator {
   private var root: RootViewController!
 
-  private let authorization: AuthorizationServiceProtocol
+  private let authorization: AuthorizationProtocol
 
-  init(authorization: AuthorizationServiceProtocol) {
+  init(authorization: AuthorizationProtocol) {
     self.authorization = authorization
   }
 }
@@ -23,8 +24,16 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
     self.root = root
 
 //    DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-      let vc = Authorization.Core.login()
+    let vc = authorization.login(output: self)
       self.root.show(vc)
 //    }
+  }
+}
+
+extension FlowCoordinator: LoginOutput {
+  func userDidLogin() {
+    let vc = UIViewController()
+    vc.view.backgroundColor = .cyan
+    self.root.show(vc)
   }
 }
