@@ -40,6 +40,7 @@
 		E319BA432B6BFF6400190321 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		E39CE4DB2B7C0F7500928201 /* Animation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Animation; sourceTree = "<group>"; };
 		E3B40FA62B6681AC006F2316 /* CDUIKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDUIKit; sourceTree = SOURCE_ROOT; };
+		E3BB76092BA762F400937E00 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		E3DCF4822B6AD80C00057BEB /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.Assembly.swift; sourceTree = "<group>"; };
 		E3F0C6CF2B695E1100AB6A64 /* Authorization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Authorization; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 		E3F0D8182B1FB53F00877580 = {
 			isa = PBXGroup;
 			children = (
+				E3BB76092BA762F400937E00 /* Networking */,
 				E39CE4DB2B7C0F7500928201 /* Animation */,
 				E3F0C6CF2B695E1100AB6A64 /* Authorization */,
 				E3B40FA62B6681AC006F2316 /* CDUIKit */,

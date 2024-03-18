@@ -7,13 +7,14 @@
 
 import Swinject
 import UIKit
+import Networking
 
 enum Login {
   struct Assembly: Swinject.Assembly {
     public func assemble(container: Container) {
       container.register(EmailViewController.self) { (resolver, output: LoginOutput) in
         let view = EmailViewController()
-        let presenter = EmailPresenter()
+        let presenter = EmailPresenter(networking:  resolver.resolve(NetworkingProtocol.self)!)
         let router = EmailRouter(resolver: resolver, output: output)
 
         presenter.view = view

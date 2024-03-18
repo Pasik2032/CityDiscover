@@ -7,11 +7,13 @@
 
 import Swinject
 import Authorization
+import Networking
 
 public final class Assembly {
   private static let assemblies: [Swinject.Assembly] = [
     FlowCoordinator.Assembly(),
     AuthorizationAssembly(),
+    NetworkingAssembly(),
   ]
 
   private static let container = Container()
