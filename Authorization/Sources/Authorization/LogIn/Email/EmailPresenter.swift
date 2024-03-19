@@ -15,10 +15,10 @@ final class EmailPresenter {
   weak var view: EmailViewInput?
   var router: EmailRouterInput?
 
-  private let networking: NetworkingProtocol
+  private let userService: UserServiceProtocol
 
-  init(networking: NetworkingProtocol) {
-    self.networking = networking
+  init(userService: UserServiceProtocol) {
+    self.userService = userService
   }
 }
 
@@ -26,13 +26,12 @@ final class EmailPresenter {
 
 extension EmailPresenter: EmailViewOutput {
   func emailNextDidPressed(email: String) {
-    Task {
-      let endpoint = SendEmail(email: email)
+    Task { @MainActor in
       do {
-        let result: Bool = try await networking.request(endpoint: endpoint)
+        try await userService.sendCode(email: email)
         router?.showCode(email: email)
-      } catch {
-        print("Error")
+      } catch UserService.UserError.failed(let message) {
+        print("message \(message)")
       }
     }
   }

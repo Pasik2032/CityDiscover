@@ -21,42 +21,54 @@ public final class NetworkingService {
 
 extension NetworkingService: NetworkingProtocol {
   public func request<T>(endpoint: T) async throws -> T.Response where T : EndPoint {
-    let urlString = "https://\(setting.domen):\(endpoint.port)/\(endpoint.path)"
-    guard let url = URL(string: urlString) else { throw Networking.Errors.url }
+    let urlString = "http://\(setting.domen):\(endpoint.port)/\(endpoint.path)"
+    guard let url = URL(string: urlString) else { throw NetworkingModule.Errors.url }
     var urlRequest = URLRequest(url: url)
+    urlRequest.allHTTPHeaderFields = [
+      "Content-Type": "application/json"
+    ]
+
     urlRequest.httpMethod = endpoint.method.rawValue
-    if let parameters = try? encoder.encode(endpoint.parameters) {
+    if let modelParam = endpoint.parameters, let parameters = try? encoder.encode(modelParam) {
       urlRequest.httpBody = parameters
     }
     let (data, response) = try await URLSession.shared.data(for: urlRequest)
 
     if (response as? HTTPURLResponse)?.statusCode != 200 {
-      guard let model = try? decoder.decode(BaseModel<ErrorModel>.self, from: data) else { throw Networking.Errors.parsing }
-      throw Networking.Errors.failer(message: model.response.message)
+      guard let model = try? decoder.decode(BaseModel<ErrorModel>.self, from: data) else { throw NetworkingModule.Errors.parsing }
+      throw NetworkingModule.Errors.failer(message: model.response.message)
     }
 
-    guard let model = try? decoder.decode(BaseModel<T.Response>.self, from: data) else { throw Networking.Errors.parsing }
+    guard let model = try? decoder.decode(BaseModel<T.Response>.self, from: data) else { throw NetworkingModule.Errors.parsing }
 
     return model.response
   }
 
   public func request<T>(endpoint: T) async throws -> Bool where T : EndPoint {
     let urlString = "http://\(setting.domen):\(endpoint.port)/\(endpoint.path)"
-    guard let url = URL(string: urlString) else { throw Networking.Errors.url }
+    guard let url = URL(string: urlString) else { throw NetworkingModule.Errors.url }
     var urlRequest = URLRequest(url: url)
+    var header = [
+      "Content-Type": "application/json"
+    ]
+
+    if let token = setting.token {
+      header["Authorization"] = token
+    }
+    urlRequest.allHTTPHeaderFields = header
     urlRequest.httpMethod = endpoint.method.rawValue
-    if let parameters = try? encoder.encode(endpoint.parameters) {
+    if let modelParam = endpoint.parameters, let parameters = try? encoder.encode(modelParam) {
       urlRequest.httpBody = parameters
     }
     let (data, response) = try await URLSession.shared.data(for: urlRequest)
 
     if (response as? HTTPURLResponse)?.statusCode != 200 {
-      guard let model = try? decoder.decode(BaseModel<ErrorModel>.self, from: data) else { throw Networking.Errors.parsing }
-      throw Networking.Errors.failer(message: model.response.message)
+      guard let model = try? decoder.decode(BaseModel<ErrorModel>.self, from: data) else { throw NetworkingModule.Errors.parsing }
+      throw NetworkingModule.Errors.failer(message: model.response.message)
     }
 
     if T.Response.self == Empty.self {
-      guard let model = try? decoder.decode(EmptyModel.self, from: data) else { throw Networking.Errors.parsing }
+      guard let model = try? decoder.decode(EmptyModel.self, from: data) else { throw NetworkingModule.Errors.parsing }
       return model.response
     }
     

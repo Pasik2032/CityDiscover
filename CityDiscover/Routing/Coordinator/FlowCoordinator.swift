@@ -22,10 +22,17 @@ final class FlowCoordinator {
 extension FlowCoordinator: FlowCoordinatorProtocol {
   func start(in root: RootViewController) {
     self.root = root
-
+    Task { @MainActor in
+      if await authorization.isLogin {
+        userDidLogin()
+      } else {
+        let vc = authorization.login(output: self)
+        self.root.show(vc)
+      }
+    }
 //    DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-    let vc = authorization.login(output: self)
-      self.root.show(vc)
+//    let vc = authorization.login(output: self)
+//      self.root.show(vc)
 //    }
   }
 }

@@ -9,10 +9,11 @@ import Swinject
 
 public struct AuthorizationAssembly: Swinject.Assembly {
   private let assemblys: [Swinject.Assembly] = [
-    AuthorizationService.Assembly(),
     SecretStore.Assembly(),
     Login.Assembly(),
     Authorization.Assembly(),
+    UserService.Assembly(),
+    Token.Assembly(),
   ]
 
   public func assemble(container: Swinject.Container) {

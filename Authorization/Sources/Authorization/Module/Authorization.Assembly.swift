@@ -12,6 +12,7 @@ extension Authorization {
     public func assemble(container: Container) {
       container.register(AuthorizationProtocol.self) { resolver in
         Authorization(
+          tokenService: resolver.resolve(TokenProtocol.self)!,
           fabricLogin: { output in
             resolver.resolve(EmailViewController.self, argument: output)!
           }

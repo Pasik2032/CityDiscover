@@ -16,14 +16,15 @@ let package = Package(
       .package(url: "https://github.com/Swinject/Swinject.git", from: "2.8.0"),
       .package(url: "https://github.com/SnapKit/SnapKit.git", .upToNextMajor(from: "5.0.1")),
       .package(path: "CDUIKit"),
-      .package(path: "Networking")
+      .package(path: "Networking"),
+      .package(url: "https://github.com/auth0/JWTDecode.swift.git", from: "3.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "Authorization",
-            dependencies: ["Swinject", "CDUIKit", "SnapKit", "Networking"]
+            dependencies: ["Swinject", "CDUIKit", "SnapKit", "Networking", .product(name: "JWTDecode", package: "JWTDecode.swift")]
         ),
         .testTarget(
             name: "AuthorizationTests",

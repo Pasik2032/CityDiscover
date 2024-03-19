@@ -22,7 +22,11 @@ extension SecretStore: SecretStoreProtocol {
     guard let data = value.data(using: .utf8) else {
       throw KeychainInterface.KeychainError.invalidItemFormat
     }
-    try KeychainInterface.save(password: data, service: service, account: key.rawValue)
+    do {
+      try KeychainInterface.save(password: data, service: service, account: key.rawValue)
+    } catch KeychainInterface.KeychainError.duplicateItem {
+      try update(key: key, new: value)
+    }
   }
 
   func update(key: Key, new newValue: String) throws {

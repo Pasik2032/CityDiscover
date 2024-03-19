@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Networking {
+public extension NetworkingModule {
   enum Errors: Error {
     case failer(message: String)
     case parsing

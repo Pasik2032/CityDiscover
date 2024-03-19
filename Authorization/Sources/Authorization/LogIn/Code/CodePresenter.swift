@@ -14,8 +14,11 @@ final class CodePresenter {
   var router: CodeRouterInput?
   private let output: LoginOutput
 
-  init(output: LoginOutput) {
+  private let userService: UserServiceProtocol
+
+  init(output: LoginOutput, userService: UserServiceProtocol) {
     self.output = output
+    self.userService = userService
   }
 }
 
@@ -23,7 +26,18 @@ final class CodePresenter {
 
 extension CodePresenter: CodeViewOutput {
   func codeDidSend(_ code: String) {
-    output.userDidLogin()
+    Task {
+      do {
+        let user = try await userService.login(code: code)
+        if user.age == nil || user.gender == nil || user.username == nil {
+
+        } else {
+          output.userDidLogin()
+        }
+      } catch UserService.UserError.failed(let message) {
+        print("message \(message)")
+      }
+    }
   }
 
   func viewDidLoad() {

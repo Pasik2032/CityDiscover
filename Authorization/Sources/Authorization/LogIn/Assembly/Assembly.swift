@@ -14,7 +14,7 @@ enum Login {
     public func assemble(container: Container) {
       container.register(EmailViewController.self) { (resolver, output: LoginOutput) in
         let view = EmailViewController()
-        let presenter = EmailPresenter(networking:  resolver.resolve(NetworkingProtocol.self)!)
+        let presenter = EmailPresenter(userService: resolver.resolve(UserServiceProtocol.self)!)
         let router = EmailRouter(resolver: resolver, output: output)
 
         presenter.view = view
@@ -29,7 +29,7 @@ enum Login {
 
       container.register(CodeViewController.self) { (resolver, output: LoginOutput) in
         let view = CodeViewController()
-        let presenter = CodePresenter(output: output)
+        let presenter = CodePresenter(output: output, userService: resolver.resolve(UserServiceProtocol.self)!)
         let router = CodeRouter()
 
         presenter.view = view
