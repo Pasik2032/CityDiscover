@@ -6,6 +6,8 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
+import CDUIKit
+
 final class CodePresenter {
 
   // MARK: - Properties
@@ -35,7 +37,8 @@ extension CodePresenter: CodeViewOutput {
           output.userDidLogin()
         }
       } catch UserService.UserError.failed(let message) {
-        print("message \(message)")
+        Alert.show(title: "Ошибка!", descriptions: message)
+        print("ERROR: \(message)")
       }
     }
   }

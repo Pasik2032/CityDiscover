@@ -7,6 +7,7 @@
 //
 
 import Networking
+import CDUIKit
 
 final class EmailPresenter {
 
@@ -31,7 +32,8 @@ extension EmailPresenter: EmailViewOutput {
         try await userService.sendCode(email: email)
         router?.showCode(email: email)
       } catch UserService.UserError.failed(let message) {
-        print("message \(message)")
+        Alert.show(title: "Ошибка!", descriptions: message)
+        print("ERROR: \(message)")
       }
     }
   }
