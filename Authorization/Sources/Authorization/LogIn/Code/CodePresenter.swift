@@ -32,7 +32,7 @@ extension CodePresenter: CodeViewOutput {
       do {
         let user = try await userService.login(code: code)
         if user.age == nil || user.gender == nil || user.username == nil {
-
+          router?.showProfile(output: output)
         } else {
           output.userDidLogin()
         }
