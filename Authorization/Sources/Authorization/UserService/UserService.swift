@@ -29,7 +29,7 @@ final class UserService {
 
 extension UserService: UserServiceProtocol {
   func putUser(user: User) async throws {
-    let endpoint = EndPoints.PutUser(user: user)
+    let endpoint = EndPoints.PutUser(user: user.dto)
     do {
       let result: Bool = try await networking.request(endpoint: endpoint)
       if !result {

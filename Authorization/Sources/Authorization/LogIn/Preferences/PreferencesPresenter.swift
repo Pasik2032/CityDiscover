@@ -69,7 +69,6 @@ extension PreferencesPresenter: PreferencesViewOutput {
   }
   
   func saveDidPressed() {
-    print("ID \(selectTag)")
     user.preferences = selectTag.map { .init(mark: "5", subcategory_id: String($0)) }
     Task { @MainActor in
       do {

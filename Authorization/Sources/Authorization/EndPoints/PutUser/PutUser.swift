@@ -10,14 +10,14 @@ import Networking
 extension EndPoints {
   struct PutUser: EndPoint {
     typealias Response = EndPoints.Empty
-    typealias Request = User
+    typealias Request = User.UserDTO
     var path: String = "user-service/user"
     var method: Networking.Method = .post
     var port: Int = 8050
 
-    var parameters: User?
+    var parameters: User.UserDTO?
 
-    init(user: User) {
+    init(user: User.UserDTO) {
       self.parameters = user
     }
   }

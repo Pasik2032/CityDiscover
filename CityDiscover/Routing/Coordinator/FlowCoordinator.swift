@@ -39,8 +39,7 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
 
 extension FlowCoordinator: LoginOutput {
   func userDidLogin() {
-    let vc = UIViewController()
-    vc.view.backgroundColor = .cyan
+    let vc = TabBarController()
     self.root.show(vc)
   }
 }
