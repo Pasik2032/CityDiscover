@@ -9,8 +9,9 @@ import Networking
 
 extension EndPoints {
   struct PutUser: EndPoint {
+    typealias Response = EndPoints.Empty
     typealias Request = User
-    var path: String = "user"
+    var path: String = "user-service/user"
     var method: Networking.Method = .post
     var port: Int = 8050
 

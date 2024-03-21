@@ -20,9 +20,6 @@ public protocol EndPoint {
 }
 
 public extension EndPoint {
-  typealias Response = Empty
   var parameters: Request? { nil }
   var javaService: Bool { true }
 }
-
-public struct Empty: Codable {}

@@ -24,27 +24,38 @@ extension NetworkingService: NetworkingProtocol {
     let urlString = "http://\(setting.domen):\(endpoint.port)/\(endpoint.path)"
     guard let url = URL(string: urlString) else { throw NetworkingModule.Errors.url }
     var urlRequest = URLRequest(url: url)
-    urlRequest.allHTTPHeaderFields = [
+
+    var header = [
       "Content-Type": "application/json"
     ]
+    if let token = setting.token {
+      header["Authorization"] = token
+    }
 
+    urlRequest.allHTTPHeaderFields = header
     urlRequest.httpMethod = endpoint.method.rawValue
     if let modelParam = endpoint.parameters, let parameters = try? encoder.encode(modelParam) {
       urlRequest.httpBody = parameters
     }
     let (data, response) = try await URLSession.shared.data(for: urlRequest)
+    print("result \(response)")
 
     if (response as? HTTPURLResponse)?.statusCode != 200 {
       guard let model = try? decoder.decode(BaseModel<ErrorModel>.self, from: data) else { throw NetworkingModule.Errors.parsing }
       throw NetworkingModule.Errors.failer(message: model.response.message)
     }
+    print("good \(endpoint.javaService)")
 
     if endpoint.javaService {
+      print("parseer")
       guard let model = try? decoder.decode(BaseModel<T.Response>.self, from: data) else { throw NetworkingModule.Errors.parsing }
+      print("parse")
       return model.response
     } else {
+      print("Response")
       guard let model = try? decoder.decode(T.Response.self, from: data) else { throw NetworkingModule.Errors.parsing }
-      return model as! T.Response
+      print("Response \(model)")
+      return model
     }
   }
 
@@ -71,11 +82,8 @@ extension NetworkingService: NetworkingProtocol {
       throw NetworkingModule.Errors.failer(message: model.response.message)
     }
 
-    if T.Response.self == Empty.self {
-      guard let model = try? decoder.decode(EmptyModel.self, from: data) else { throw NetworkingModule.Errors.parsing }
-      return model.response
-    }
-    
+    if let model = try? decoder.decode(EmptyModel.self, from: data) { return model.response }
+
     return true
   }
 }

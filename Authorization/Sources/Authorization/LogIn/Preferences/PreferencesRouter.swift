@@ -9,6 +9,7 @@ import UIKit
 import Swinject
 
 protocol PreferencesRouterInput {
+  func close()
 }
 
 final class PreferencesRouter {
@@ -28,4 +29,7 @@ final class PreferencesRouter {
 // MARK: - PreferencesRouterInput
 
 extension PreferencesRouter: PreferencesRouterInput {
+  func close() {
+    output.userDidLogin()
+  }
 }

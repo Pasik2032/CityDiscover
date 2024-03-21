@@ -18,10 +18,10 @@ final class PreferencesPresenter {
 
   private let userService: UserServiceProtocol
   private let networking: NetworkingProtocol
-  private let user: User
+  private var user: User
 
   private var categories: [EndPoints.Categories.Categor] = []
-  private var tags: [String] = ["Add", "two", "tags", "dshgsshjjsds", "fgshdskdls"]
+  private var tags: [String] = []
   private var selectTag: [Int] = []
 
   init(userService: UserServiceProtocol, user: User, networking: NetworkingProtocol) {
@@ -70,13 +70,22 @@ extension PreferencesPresenter: PreferencesViewOutput {
   
   func saveDidPressed() {
     print("ID \(selectTag)")
+    user.preferences = selectTag.map { .init(mark: "5", subcategory_id: String($0)) }
+    Task { @MainActor in
+      do {
+        try await userService.putUser(user: user)
+        router?.close()
+      } catch UserService.UserError.failed(let message) {
+        Alert.show(title: "Ошибка!", descriptions: message)
+        print("ERROR: \(message)")
+      }
+    }
   }
   
   func viewDidLoad() {
     Task { @MainActor in
       let endpoint = EndPoints.Categories()
       let result: EndPoints.Categories.Response = try await networking.request(endpoint: endpoint)
-      print("result \(result)")
       self.categories = result
       self.tags = result.map { $0.name }
       view?.startTag(tags)

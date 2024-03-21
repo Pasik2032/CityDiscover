@@ -14,6 +14,8 @@ extension EndPoints {
     var path: String = "categories"
     var method: Networking.Method = .get
     var port: Int = 5001
-    var javaService = true
+    var javaService = false
   }
+
+  struct Empty: Codable {}
 }

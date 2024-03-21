@@ -8,6 +8,7 @@
 import Networking
 
 struct SendEmail: EndPoint {
+  typealias Response = EndPoints.Empty
   var path: String = "user-service/auth/code"
   var method: Networking.Method = .post
   var port: Int = 8050

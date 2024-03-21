@@ -37,7 +37,7 @@ final class PreferencesViewController: ViewController {
 
   private lazy var tagListView: TagListView = {
     let tagListView = TagListView()
-    tagListView.textFont = UIFont.systemFont(ofSize: 24)
+    tagListView.textFont = UIFont.systemFont(ofSize: 18)
     tagListView.alignment = .leading
     tagListView.minWidth = 57
     tagListView.cornerRadius = 12.0
