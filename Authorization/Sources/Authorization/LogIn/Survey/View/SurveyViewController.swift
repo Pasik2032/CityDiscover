@@ -11,14 +11,13 @@ import CDUIKit
 import SnapKit
 
 protocol SurveyViewInput: AnyObject {
-
+  func setSection(_ section: [SurveyViewController.Section])
 }
 
-protocol SurveyViewOutput: AnyObject {
+protocol SurveyViewOutput: AnyObject, SurveyUserNameOutput, SurveyAgeOutput, SurveyGenderOutput {
   func viewDidLoad()
-  func emailNextDidPressed(email: String)
+  func saveDidPressed()
 }
-
 
 final class SurveyViewController: ViewController {
 
@@ -33,6 +32,7 @@ final class SurveyViewController: ViewController {
     tableView.register(SurveyTitleTableViewCell.self)
     tableView.register(SurveyUserNameTableViewCell.self)
     tableView.register(SurveyAgeTableViewCell.self)
+    tableView.register(SurveyGenderTableViewCell.self)
     return tableView
   }()
 
@@ -51,7 +51,7 @@ final class SurveyViewController: ViewController {
   var presenter: SurveyViewOutput?
   private var bottom: Constraint?
 
-  private var sections: [Section] = [.title, .username(nil), .age(nil)]
+  private var sections: [Section] = []
 
   // MARK: - UIViewController
 
@@ -67,6 +67,7 @@ final class SurveyViewController: ViewController {
   // MARK: - Actions
 
   @objc private func buttonDidPressed() {
+    presenter?.saveDidPressed()
   }
 
   // MARK: - Setup
@@ -117,10 +118,17 @@ extension SurveyViewController: UITableViewDataSource {
     case .username(let name):
       let cell: SurveyUserNameTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
       cell.config(text: name)
+      cell.output = presenter
       return cell
     case .age(let age):
       let cell: SurveyAgeTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
       cell.config(text: age)
+      cell.output = presenter
+      return cell
+    case .gender(let gender):
+      let cell: SurveyGenderTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+      cell.config(gender: gender)
+      cell.output = presenter
       return cell
     }
   }
@@ -128,6 +136,8 @@ extension SurveyViewController: UITableViewDataSource {
 // MARK: - EmailViewInput
 
 extension SurveyViewController: SurveyViewInput {
-
+  func setSection(_ section: [Section]) {
+    self.sections = section
+    tableView.reloadData()
+  }
 }
-

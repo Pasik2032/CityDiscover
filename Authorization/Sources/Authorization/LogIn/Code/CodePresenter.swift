@@ -28,11 +28,11 @@ final class CodePresenter {
 
 extension CodePresenter: CodeViewOutput {
   func codeDidSend(_ code: String) {
-    Task {
+    Task { @MainActor in
       do {
         let user = try await userService.login(code: code)
         if user.age == nil || user.gender == nil || user.username == nil {
-          router?.showProfile(output: output)
+          router?.showProfile(output: output, user: user)
         } else {
           output.userDidLogin()
         }

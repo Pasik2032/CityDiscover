@@ -10,6 +10,6 @@ extension SurveyViewController {
     case title
     case username(String?)
     case age(Int?)
-//    case gender(User.Gender?)
+    case gender(User.Gender?)
   }
 }

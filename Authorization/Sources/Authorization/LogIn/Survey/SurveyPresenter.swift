@@ -17,19 +17,39 @@ final class SurveyPresenter {
   var router: SurveyRouterInput?
 
   private let userService: UserServiceProtocol
+  private var user: User
 
-  init(userService: UserServiceProtocol) {
+  init(userService: UserServiceProtocol, user: User) {
     self.userService = userService
+    self.user = user
   }
 }
 
 // MARK: - EmailViewOutput
 
 extension SurveyPresenter: SurveyViewOutput {
-  func emailNextDidPressed(email: String) {
+  func saveDidPressed() {
+    router?.showNext(user: user)
+  }
+  
+  func userNameDidChange(new: String?) {
+    user.username = new
+  }
+  
+  func ageDidChange(new: Int?) {
+    user.age = new
+  }
+  
+  func genderDidChange(new: User.Gender) {
+    user.gender = new
   }
 
   func viewDidLoad() {
-
+    view?.setSection([
+      .title,
+      .username(user.username),
+      .age(user.age),
+      .gender(user.gender)
+    ])
   }
 }

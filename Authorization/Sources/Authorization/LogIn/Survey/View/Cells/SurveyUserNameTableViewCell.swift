@@ -9,6 +9,10 @@
 import CDUIKit
 import UIKit
 
+protocol SurveyUserNameOutput: AnyObject {
+  func userNameDidChange(new: String?)
+}
+
 final class SurveyUserNameTableViewCell: UITableViewCell {
 
   private lazy var label: UILabel = {
@@ -25,9 +29,12 @@ final class SurveyUserNameTableViewCell: UITableViewCell {
     textField.placeholder = "UserName"
     textField.backgroundColor = UIColor.ds(.mainBackground2)
     textField.layer.cornerRadius = 5.0
-    textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+    textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0)
+    textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     return textField
   }()
+
+  weak var output: SurveyUserNameOutput?
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -62,5 +69,8 @@ final class SurveyUserNameTableViewCell: UITableViewCell {
       $0.bottom.equalToSuperview().inset(8.0)
     }
   }
-}
 
+  @objc private func textFieldDidChange() {
+    output?.userNameDidChange(new: textField.text)
+  }
+}

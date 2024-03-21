@@ -42,10 +42,25 @@ enum Login {
         return view
       }
 
-      container.register(SurveyViewController.self) { (resolver, output: LoginOutput) in
+      container.register(SurveyViewController.self) { (resolver, output: LoginOutput, user: User) in
         let view = SurveyViewController()
-        let presenter = SurveyPresenter(userService: resolver.resolve(UserServiceProtocol.self)!)
+        let presenter = SurveyPresenter(userService: resolver.resolve(UserServiceProtocol.self)!, user: user)
         let router = SurveyRouter(resolver: resolver, output: output)
+
+        presenter.view = view
+        presenter.router = router
+
+        router.view = view
+
+        view.presenter = presenter
+
+        return view
+      }
+
+      container.register(PreferencesViewController.self) { (resolver, output: LoginOutput, user: User) in
+        let view = PreferencesViewController()
+        let presenter = PreferencesPresenter(userService: resolver.resolve(UserServiceProtocol.self)!, user: user, networking: resolver.resolve(NetworkingProtocol.self)!)
+        let router = PreferencesRouter(resolver: resolver, output: output)
 
         presenter.view = view
         presenter.router = router

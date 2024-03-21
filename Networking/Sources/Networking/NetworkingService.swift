@@ -39,9 +39,13 @@ extension NetworkingService: NetworkingProtocol {
       throw NetworkingModule.Errors.failer(message: model.response.message)
     }
 
-    guard let model = try? decoder.decode(BaseModel<T.Response>.self, from: data) else { throw NetworkingModule.Errors.parsing }
-
-    return model.response
+    if endpoint.javaService {
+      guard let model = try? decoder.decode(BaseModel<T.Response>.self, from: data) else { throw NetworkingModule.Errors.parsing }
+      return model.response
+    } else {
+      guard let model = try? decoder.decode(T.Response.self, from: data) else { throw NetworkingModule.Errors.parsing }
+      return model as! T.Response
+    }
   }
 
   public func request<T>(endpoint: T) async throws -> Bool where T : EndPoint {

@@ -15,11 +15,14 @@ public protocol EndPoint {
   var method: Method { get }
   var port: Int { get }
   var parameters: Request? { get }
+
+  var javaService: Bool { get }
 }
 
 public extension EndPoint {
   typealias Response = Empty
   var parameters: Request? { nil }
+  var javaService: Bool { true }
 }
 
-public struct Empty: Decodable {}
+public struct Empty: Codable {}

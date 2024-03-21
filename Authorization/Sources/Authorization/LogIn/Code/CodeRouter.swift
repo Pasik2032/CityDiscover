@@ -10,7 +10,7 @@ import Swinject
 
 protocol CodeRouterInput {
   func close()
-  func showProfile(output: LoginOutput) 
+  func showProfile(output: LoginOutput, user: User)
 }
 
 final class CodeRouter {
@@ -32,8 +32,8 @@ extension CodeRouter: CodeRouterInput {
     view?.dismiss(animated: true)
   }
 
-  func showProfile(output: LoginOutput) {
-    let surveyVC = resolver.resolve(SurveyViewController.self, argument: output)!
+  func showProfile(output: LoginOutput, user: User) {
+    let surveyVC = resolver.resolve(SurveyViewController.self, arguments: output, user)!
     view?.navigationController?.pushViewController(surveyVC, animated: true)
   }
 }

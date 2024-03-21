@@ -10,6 +10,7 @@ import Networking
 protocol UserServiceProtocol {
   func sendCode(email: String) async throws
   func login(code: String) async throws -> User
+  func putUser(user: User) async throws
 //  func getUser() async throws -> User
 }
 
@@ -27,6 +28,20 @@ final class UserService {
 }
 
 extension UserService: UserServiceProtocol {
+  func putUser(user: User) async throws {
+    let endpoint = EndPoints.PutUser(user: user)
+    do {
+      let result: Bool = try await networking.request(endpoint: endpoint)
+      if !result {
+        throw UserError.failed(message: "Извините, произошла неизвестная ошибка")
+      }
+    } catch NetworkingModule.Errors.failer(let message) {
+      throw UserError.failed(message: message)
+    } catch {
+      throw UserError.failed(message: "Извините, произошла неизвестная ошибка")
+    }
+  }
+  
   func sendCode(email: String) async throws {
     let endpoint = SendEmail(email: email)
     do {
@@ -43,7 +58,6 @@ extension UserService: UserServiceProtocol {
   }
 
   func login(code: String) async throws -> User {
-    print("message \(email)")
     guard let email else {
       throw UserError.failed(message: "Извините, произошла неизвестная ошибка")
     }

@@ -8,6 +8,10 @@
 import CDUIKit
 import UIKit
 
+protocol SurveyAgeOutput: AnyObject {
+  func ageDidChange(new: Int?)
+}
+
 final class SurveyAgeTableViewCell: UITableViewCell {
 
   private lazy var label: UILabel = {
@@ -25,9 +29,12 @@ final class SurveyAgeTableViewCell: UITableViewCell {
     textField.keyboardType = .phonePad
     textField.backgroundColor = UIColor.ds(.mainBackground2)
     textField.layer.cornerRadius = 5.0
-    textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+    textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0)
+    textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     return textField
   }()
+
+  weak var output: SurveyAgeOutput?
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -62,5 +69,8 @@ final class SurveyAgeTableViewCell: UITableViewCell {
       $0.bottom.equalToSuperview().inset(8.0)
     }
   }
-}
 
+  @objc private func textFieldDidChange() {
+    output?.ageDidChange(new: Int(textField.text ?? ""))
+  }
+}

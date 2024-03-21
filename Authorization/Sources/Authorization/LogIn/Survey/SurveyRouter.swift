@@ -9,6 +9,8 @@ import UIKit
 import Swinject
 
 protocol SurveyRouterInput {
+  func close()
+  func showNext(user: User) 
 }
 
 final class SurveyRouter {
@@ -28,4 +30,12 @@ final class SurveyRouter {
 // MARK: - SurveyRouterInput
 
 extension SurveyRouter: SurveyRouterInput {
+  func close() {
+    output.userDidLogin()
+  }
+
+  func showNext(user: User) {
+    let surveyVC = resolver.resolve(PreferencesViewController.self, arguments: output, user)!
+    view?.navigationController?.pushViewController(surveyVC, animated: true)
+  }
 }
