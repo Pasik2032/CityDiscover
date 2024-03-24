@@ -17,7 +17,7 @@ extension TabBar {
     func create(_ item: Item) -> UIViewController {
       switch item {
       case .main: resolver.resolve(MainPlace.self)!.view
-      case .collection, .profile, .map: UIViewController()
+      case .collection, .profile, .map, .add: UIViewController()
       }
     }
   }

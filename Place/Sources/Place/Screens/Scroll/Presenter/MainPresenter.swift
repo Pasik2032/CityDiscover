@@ -33,7 +33,7 @@ final class MainPresenter {
 extension MainPresenter: MainViewOutput {
   func cardDidPressed(id: Int) {
     guard let place = places.first(where: { $0.id == id }) else { return }
-    print("place \(place)")
+    router?.showDetail(place: place)
   }
 
   func viewDidLoad() {

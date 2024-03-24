@@ -11,6 +11,7 @@ public struct PlaceAssembly: Swinject.Assembly {
   private let assemblys: [Swinject.Assembly] = [
     MainAssembly(),
     PlaceServiceAssembly(),
+    DetailAssembly(),
   ]
 
   public func assemble(container: Swinject.Container) {

@@ -16,7 +16,7 @@ struct MainAssembly: Swinject.Assembly {
     container.register(MainPlace.self) { resolver in
       let view = MainViewController()
       let presenter = MainPresenter(placeService: resolver.resolve(PlaceServiceProtocol.self)!)
-      let router = MainRouter()
+      let router = MainRouter(resolver: resolver)
 
       presenter.view = view
       presenter.router = router

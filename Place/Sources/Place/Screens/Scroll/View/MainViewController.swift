@@ -28,6 +28,7 @@ final class MainViewController: UIViewController {
     let stackContainer = StackContainerView()
     stackContainer.dataSource = self
     stackContainer.delegate = presenter
+    stackContainer.alpha = 0
     return stackContainer
   }()
 
@@ -47,11 +48,12 @@ final class MainViewController: UIViewController {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    stackContainer.alpha = 0
-    stackContainer.reloadData()
+    if stackContainer.alpha == 0 {
+      stackContainer.reloadData()
 
-    UIView.animate(withDuration: 0.25) {
-      self.stackContainer.alpha = 1
+      UIView.animate(withDuration: 0.25) {
+        self.stackContainer.alpha = 1
+      }
     }
   }
 

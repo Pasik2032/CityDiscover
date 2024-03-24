@@ -18,4 +18,7 @@ struct PlaceModel: Decodable {
   let pos2: Float
   let rating: Float?
   let subcategory: String
+  let reviews_count: String
+
+  var coordinate: Coordinate { .init(longitude: pos1, latitude: pos2) }
 }

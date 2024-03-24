@@ -15,9 +15,11 @@ extension TabBar {
     case map
     case main
     case collection
+    case add
 
     var title: String {
       switch self {
+      case .add: ""
       case .main: "Главная"
       case .profile: "Профиль"
       case .map: "Карта"
@@ -31,6 +33,7 @@ extension TabBar {
       case .profile: "person"
       case .map: "map"
       case .collection: "photo.stack"
+      case .add: "plus"
       }
     }
   }

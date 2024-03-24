@@ -15,7 +15,7 @@ final class TabBarController: UITabBarController {
     super.viewDidLoad()
     setGradientBackground()
     setupTabBar()
-    selectedIndex = 2
+    selectedIndex = 3
   }
 
   func setGradientBackground() {
@@ -31,7 +31,7 @@ final class TabBarController: UITabBarController {
   }
 
   private func setupTabBar() {
-    let dataSource: [TabBar.Item] = [.collection, .map, .main, .profile]
+    let dataSource: [TabBar.Item] = [.collection, .map, .add, .main, .profile]
     self.viewControllers = dataSource.map {
        self.wrappedInNavigationController(with: fabric.create($0), title: $0.title)
     }

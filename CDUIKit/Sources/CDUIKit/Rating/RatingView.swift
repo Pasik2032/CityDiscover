@@ -8,7 +8,7 @@
 import UIKit
 
 public final class RatingView: UIView {
-  private lazy var label: UILabel = {
+  public lazy var label: UILabel = {
     let label = UILabel()
     label.font = .boldSystemFont(ofSize: 15.0)
     label.textColor = .ds(.text)
