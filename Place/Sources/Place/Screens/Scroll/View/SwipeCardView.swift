@@ -5,12 +5,12 @@
 //  Created by Даниил Пасилецкий on 22.03.2024.
 //
 
-
 import UIKit
+import CDUIKit
 
-class SwipeCardView : UIView {
+final class SwipeCardView : UIView {
 
-  // MARK: - Properties
+  // MARK: - UI
 
   private lazy var swipeView: UIView = {
     let swipeView = UIView()
@@ -31,16 +31,18 @@ class SwipeCardView : UIView {
 
   private lazy var imageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.backgroundColor = .red
-    imageView.contentMode = .scaleAspectFit
+    imageView.backgroundColor = .ds(.mainBackground)
+    imageView.contentMode = .scaleAspectFill
     return imageView
   }()
 
   private lazy var backDataView: UIView = {
-    let view = UIView()
-    view.layer.cornerRadius = 15
-    view.clipsToBounds = true
-    view.backgroundColor = .ds(.mainBackground).withAlphaComponent(0.5)
+    let view = GradientView()
+    let topColor = UIColor.ds(.mainBackground).withAlphaComponent(0.0).cgColor
+    let mediumColor = UIColor.ds(.mainBackground).withAlphaComponent(0.7).cgColor
+    let bottomColor = UIColor.ds(.mainBackground).cgColor
+    (view.layer as? CAGradientLayer)?.colors = [topColor, mediumColor, bottomColor]
+    (view.layer as? CAGradientLayer)?.locations = [0.0, 0.5, 1.0]
     return view
   }()
 
@@ -63,31 +65,54 @@ class SwipeCardView : UIView {
     return label
   }()
 
+  private lazy var ratingView: RatingView = {
+    let ratingView = RatingView()
+    return ratingView
+  }()
+
   private lazy var iconImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.image = UIImage(systemName: "arrowshape.forward.fill")
     imageView.tintColor = .ds(.text)
+    imageView.isHidden = true
     return imageView
   }()
 
-  var moreButton = UIButton()
+  private lazy var categotyLabel: UILabel = {
+    let label = PaddingLabel()
+    label.font = .boldSystemFont(ofSize: 15.0)
+    label.textColor = .ds(.text)
+    label.backgroundColor = .ds(.mainBackground2).withAlphaComponent(0.5)
+    label.layer.cornerRadius = 5.0
+    label.clipsToBounds = true
+    return label
+  }()
 
-  var delegate : SwipeCardsDelegate?
+  // MARK: - Properties
 
-  var divisor : CGFloat = 0
-  let baseView = UIView()
+  var delegate: SwipeCardsDelegate?
+  var divisor: CGFloat = 0
+  private var id: Int = -1
 
-  var dataSource : CardsDataModel? {
+  var dataSource: CardsDataModel? {
     didSet {
+      id = dataSource?.id ?? -1
       label.text = dataSource?.text
       addresLabel.text = dataSource?.address
       guard let image = dataSource?.image else { return }
-      imageView.image = UIImage(named: image)
+      imageView.setImage(url: image)
+      categotyLabel.text = dataSource?.categoty
+      if let raiting = dataSource?.raiting {
+        ratingView.setup(raiting)
+        ratingView.isHidden = false
+      } else {
+        ratingView.isHidden = true
+      }
     }
   }
 
-
   //MARK: - Init
+
   override init(frame: CGRect) {
     super.init(frame: .zero)
     configureShadowView()
@@ -104,9 +129,18 @@ class SwipeCardView : UIView {
   func configureShadowView() {
     addSubview(shadowView)
     shadowView.addSubview(swipeView)
-    swipeView.addSubview(imageView)
-    swipeView.addSubview(backDataView)
-    backDataView.addSubviews([iconImageView, label, addresLabel])
+    swipeView.addSubviews([imageView, backDataView])
+    backDataView.addSubviews([iconImageView, label, addresLabel, ratingView, categotyLabel])
+
+    categotyLabel.snp.makeConstraints {
+      $0.leading.equalToSuperview().inset(16.0)
+      $0.bottom.equalToSuperview().inset(16)
+    }
+
+    ratingView.snp.makeConstraints {
+      $0.trailing.equalToSuperview().inset(16.0)
+      $0.centerY.equalTo(label)
+    }
 
     addresLabel.snp.makeConstraints {
       $0.leading.equalToSuperview().inset(16.0)
@@ -118,7 +152,7 @@ class SwipeCardView : UIView {
     label.snp.makeConstraints {
       $0.leading.equalToSuperview().inset(16.0)
       $0.width.equalTo(200)
-      $0.bottom.equalToSuperview().inset(16)
+      $0.bottom.equalTo(categotyLabel.snp.top).inset(-10.0)
     }
 
     iconImageView.snp.makeConstraints {
@@ -197,6 +231,7 @@ class SwipeCardView : UIView {
     }
   }
 
-  @objc func handleTapGesture(sender: UITapGestureRecognizer){
+  @objc func handleTapGesture(sender: UITapGestureRecognizer) {
+    delegate?.cardDidPressed(id: id)
   }
 }

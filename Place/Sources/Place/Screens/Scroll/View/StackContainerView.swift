@@ -10,6 +10,7 @@ import UIKit
 class StackContainerView: UIView, SwipeCardsDelegate {
 
   //MARK: - Properties
+
   var numberOfCardsToShow: Int = 0
   var cardsToBeVisible: Int = 3
   var cardViews : [SwipeCardView] = []
@@ -21,6 +22,8 @@ class StackContainerView: UIView, SwipeCardsDelegate {
   var visibleCards: [SwipeCardView] {
     return subviews as? [SwipeCardView] ?? []
   }
+
+  weak var delegate: StackContainerDelegate?
 
   var dataSource: SwipeCardsDataSource? {
     didSet {
@@ -81,6 +84,10 @@ class StackContainerView: UIView, SwipeCardsDelegate {
       cardView.removeFromSuperview()
     }
     cardViews = []
+  }
+
+  func cardDidPressed(id: Int) {
+    delegate?.cardDidPressed(id: id)
   }
 
   func swipeDidEnd(on view: SwipeCardView) {

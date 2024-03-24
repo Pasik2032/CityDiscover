@@ -7,30 +7,27 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol MainViewInput: AnyObject {
-
+  func setItem(models: [CardsDataModel])
 }
 
-protocol MainViewOutput: AnyObject {
+protocol MainViewOutput: AnyObject, StackContainerDelegate {
   func viewDidLoad()
 }
 
 
 final class MainViewController: UIViewController {
 
-  var viewModelData = [CardsDataModel(address: "UIColor(red:0.96, green:0.81, blue:0.46, alpha:1.0)", text: "Hamburger", image: "hamburger"),
-                       CardsDataModel(address: "UIColor(red:0.96, green:0.81, blue:0.46, alpha:1.0)", text: "Puppy", image: "puppy"),
-                       CardsDataModel(address: "UIColor(red:0.96, green:0.81, blue:0.46, alpha:1.0)", text: "Poop", image: "poop"),
-                       CardsDataModel(address: "UIColor(red:0.96, green:0.81, blue:0.46, alpha:1.0)", text: "Panda", image: "panda"),
-                       CardsDataModel(address: "UIColor(red:0.96, green:0.81, blue:0.46, alpha:1.0)", text: "Subway", image: "subway"),
-                       CardsDataModel(address: "UIColor(red:0.96, green:0.81, blue:0.46, alpha:1.0)", text: "Robot", image: "robot")]
+  private var viewModelData: [CardsDataModel] = []
 
   // MARK: - UI
 
   private lazy var stackContainer: StackContainerView = {
     let stackContainer = StackContainerView()
     stackContainer.dataSource = self
+    stackContainer.delegate = presenter
     return stackContainer
   }()
 
@@ -45,7 +42,17 @@ final class MainViewController: UIViewController {
     super.viewDidLoad()
     presenter?.viewDidLoad()
     setupUI()
+    title = "Интересные места"
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    stackContainer.alpha = 0
     stackContainer.reloadData()
+
+    UIView.animate(withDuration: 0.25) {
+      self.stackContainer.alpha = 1
+    }
   }
 
   // MARK: - Actions
@@ -57,7 +64,7 @@ final class MainViewController: UIViewController {
     view.addSubview(stackContainer)
 
     stackContainer.snp.makeConstraints {
-      $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+      $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(16.0)
       $0.leading.trailing.equalToSuperview().inset(16.0)
       $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(32.0)
     }
@@ -67,7 +74,10 @@ final class MainViewController: UIViewController {
 // MARK: - MainViewInput
 
 extension MainViewController: MainViewInput {
-
+  func setItem(models: [CardsDataModel]) {
+    viewModelData = models
+    stackContainer.reloadData()
+  }
 }
 
 // MARK: - SwipeCardsDataSource

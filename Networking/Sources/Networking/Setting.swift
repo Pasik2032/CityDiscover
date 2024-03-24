@@ -14,6 +14,6 @@ public protocol SettingProtocol: AnyObject {
 
 final class Setting: SettingProtocol {
 //  var domen: String = "localhost"
-  var domen: String = "10.77.13.141"
+  var domen: String = "10.77.14.129"
   var token: String?
 }

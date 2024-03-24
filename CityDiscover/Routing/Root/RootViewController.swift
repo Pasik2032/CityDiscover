@@ -34,12 +34,6 @@ final class RootViewController: UIViewController {
     animateFadeTransition(to: vc)
   }
 
-  func switchToMainScreen() {
-    let mainViewController = MainViewController()
-    let mainScreen = UINavigationController(rootViewController: mainViewController)
-    animateFadeTransition(to: mainScreen)
-  }
-
   private func setupCurrent() {
     addChild(current)
     current.view.frame = view.bounds

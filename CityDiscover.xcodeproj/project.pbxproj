@@ -9,23 +9,17 @@
 /* Begin PBXBuildFile section */
 		E316F8DC2B1F4FF7007D2945 /* AppDelegate+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316F8DB2B1F4FF7007D2945 /* AppDelegate+Root.swift */; };
 		E316F8DE2B1F52EE007D2945 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316F8DD2B1F52EE007D2945 /* SplashViewController.swift */; };
-		E316F8E12B1F5395007D2945 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316F8E02B1F5395007D2945 /* LoginViewController.swift */; };
 		E319BA3C2B6BC57300190321 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA3B2B6BC57300190321 /* FlowCoordinator.swift */; };
 		E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */; };
 		E319BA442B6BFF6400190321 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA432B6BFF6400190321 /* Assembly.swift */; };
-		E366B6392BACDC7300D9923D /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366B6352BACDC7300D9923D /* MainPresenter.swift */; };
-		E366B63A2BACDC7300D9923D /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366B6362BACDC7300D9923D /* MainRouter.swift */; };
-		E366B63B2BACDC7300D9923D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366B6372BACDC7300D9923D /* MainViewController.swift */; };
-		E366B63C2BACDC7300D9923D /* MainModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366B6382BACDC7300D9923D /* MainModuleConfigurator.swift */; };
-		E366B63F2BACDDB800D9923D /* SwipeCardsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366B63E2BACDDB800D9923D /* SwipeCardsDataSource.swift */; };
-		E366B6412BACDFE100D9923D /* StackContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366B6402BACDFE100D9923D /* StackContainerView.swift */; };
-		E366B6442BACE02200D9923D /* CardsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366B6432BACE02200D9923D /* CardsDataModel.swift */; };
-		E366B6462BACE06500D9923D /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366B6452BACE06500D9923D /* SwipeCardView.swift */; };
 		E39CE4DE2B7C12DE00928201 /* Animation in Frameworks */ = {isa = PBXBuildFile; productRef = E39CE4DD2B7C12DE00928201 /* Animation */; };
 		E3B40FA52B668152006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA42B668152006F2316 /* CDUIKit */; };
 		E3B40FA92B6681C3006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA82B6681C3006F2316 /* CDUIKit */; };
 		E3B9718D2BACCC0F005D5CB6 /* TabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B9718C2BACCC0F005D5CB6 /* TabBarContoller.swift */; };
 		E3B9718F2BACCC65005D5CB6 /* TabBar.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B9718E2BACCC65005D5CB6 /* TabBar.Item.swift */; };
+		E3D13F842BB059F900ED374D /* TabBar.Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D13F832BB059F900ED374D /* TabBar.Fabric.swift */; };
+		E3D13F862BB05BE000ED374D /* Place in Frameworks */ = {isa = PBXBuildFile; productRef = E3D13F852BB05BE000ED374D /* Place */; };
+		E3D13F892BB05BF300ED374D /* Place in Frameworks */ = {isa = PBXBuildFile; productRef = E3D13F882BB05BF300ED374D /* Place */; };
 		E3DCF47A2B6ACE4500057BEB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3DCF4792B6ACE4500057BEB /* SnapKit */; };
 		E3DCF4832B6AD80C00057BEB /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DCF4822B6AD80C00057BEB /* Mode.swift */; };
 		E3F0C6CC2B69584D00AB6A64 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = E3F0C6CB2B69584D00AB6A64 /* Swinject */; };
@@ -42,23 +36,16 @@
 /* Begin PBXFileReference section */
 		E316F8DB2B1F4FF7007D2945 /* AppDelegate+Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Root.swift"; sourceTree = "<group>"; };
 		E316F8DD2B1F52EE007D2945 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		E316F8E02B1F5395007D2945 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E319BA3B2B6BC57300190321 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		E319BA432B6BFF6400190321 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
-		E366B6352BACDC7300D9923D /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		E366B6362BACDC7300D9923D /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		E366B6372BACDC7300D9923D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E366B6382BACDC7300D9923D /* MainModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleConfigurator.swift; sourceTree = "<group>"; };
-		E366B63E2BACDDB800D9923D /* SwipeCardsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardsDataSource.swift; sourceTree = "<group>"; };
-		E366B6402BACDFE100D9923D /* StackContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackContainerView.swift; sourceTree = "<group>"; };
-		E366B6432BACE02200D9923D /* CardsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataModel.swift; sourceTree = "<group>"; };
-		E366B6452BACE06500D9923D /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
 		E39CE4DB2B7C0F7500928201 /* Animation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Animation; sourceTree = "<group>"; };
 		E3B40FA62B6681AC006F2316 /* CDUIKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDUIKit; sourceTree = SOURCE_ROOT; };
 		E3B9718C2BACCC0F005D5CB6 /* TabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContoller.swift; sourceTree = "<group>"; };
 		E3B9718E2BACCC65005D5CB6 /* TabBar.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.Item.swift; sourceTree = "<group>"; };
 		E3BB76092BA762F400937E00 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
+		E3D13F822BB0576700ED374D /* Place */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Place; sourceTree = "<group>"; };
+		E3D13F832BB059F900ED374D /* TabBar.Fabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.Fabric.swift; sourceTree = "<group>"; };
 		E3DCF4822B6AD80C00057BEB /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.Assembly.swift; sourceTree = "<group>"; };
 		E3F0C6CF2B695E1100AB6A64 /* Authorization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Authorization; sourceTree = "<group>"; };
@@ -78,6 +65,8 @@
 			files = (
 				E3B40FA92B6681C3006F2316 /* CDUIKit in Frameworks */,
 				E3F0C6CC2B69584D00AB6A64 /* Swinject in Frameworks */,
+				E3D13F862BB05BE000ED374D /* Place in Frameworks */,
+				E3D13F892BB05BF300ED374D /* Place in Frameworks */,
 				E39CE4DE2B7C12DE00928201 /* Animation in Frameworks */,
 				E3DCF47A2B6ACE4500057BEB /* SnapKit in Frameworks */,
 				E3B40FA52B668152006F2316 /* CDUIKit in Frameworks */,
@@ -163,32 +152,8 @@
 		E366B6342BACDC3700D9923D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E366B6422BACE01900D9923D /* Model */,
-				E366B63D2BACDDA800D9923D /* View */,
-				E366B6352BACDC7300D9923D /* MainPresenter.swift */,
-				E366B6362BACDC7300D9923D /* MainRouter.swift */,
-				E366B6382BACDC7300D9923D /* MainModuleConfigurator.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		E366B63D2BACDDA800D9923D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E366B6372BACDC7300D9923D /* MainViewController.swift */,
-				E366B63E2BACDDB800D9923D /* SwipeCardsDataSource.swift */,
-				E366B6402BACDFE100D9923D /* StackContainerView.swift */,
-				E366B6452BACE06500D9923D /* SwipeCardView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E366B6422BACE01900D9923D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E366B6432BACE02200D9923D /* CardsDataModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E3B9718B2BACCBEF005D5CB6 /* TabBar */ = {
@@ -196,6 +161,7 @@
 			children = (
 				E3B9718C2BACCC0F005D5CB6 /* TabBarContoller.swift */,
 				E3B9718E2BACCC65005D5CB6 /* TabBar.Item.swift */,
+				E3D13F832BB059F900ED374D /* TabBar.Fabric.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -226,6 +192,7 @@
 		E3F0D8182B1FB53F00877580 = {
 			isa = PBXGroup;
 			children = (
+				E3D13F822BB0576700ED374D /* Place */,
 				E3BB76092BA762F400937E00 /* Networking */,
 				E39CE4DB2B7C0F7500928201 /* Animation */,
 				E3F0C6CF2B695E1100AB6A64 /* Authorization */,
@@ -255,7 +222,6 @@
 				E319BA342B6AE2B700190321 /* Routing */,
 				E319BA332B6AE2AB00190321 /* Module */,
 				E3DCF47B2B6AD5FB00057BEB /* UI */,
-				E316F8E02B1F5395007D2945 /* LoginViewController.swift */,
 			);
 			path = CityDiscover;
 			sourceTree = "<group>";
@@ -284,6 +250,8 @@
 				E3F0C6D12B69628F00AB6A64 /* Authorization */,
 				E3F0C6D42B6962AA00AB6A64 /* Authorization */,
 				E39CE4DD2B7C12DE00928201 /* Animation */,
+				E3D13F852BB05BE000ED374D /* Place */,
+				E3D13F882BB05BF300ED374D /* Place */,
 			);
 			productName = CityDiscover;
 			productReference = E3F0D8212B1FB54000877580 /* CityDiscover.app */;
@@ -319,6 +287,7 @@
 				E3F0C6CA2B69584D00AB6A64 /* XCRemoteSwiftPackageReference "Swinject" */,
 				E3F0C6D32B6962AA00AB6A64 /* XCLocalSwiftPackageReference "Authorization" */,
 				E39CE4DC2B7C12DE00928201 /* XCLocalSwiftPackageReference "Animation" */,
+				E3D13F872BB05BF300ED374D /* XCLocalSwiftPackageReference "Place" */,
 			);
 			productRefGroup = E3F0D8222B1FB54000877580 /* Products */;
 			projectDirPath = "";
@@ -346,27 +315,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E366B63A2BACDC7300D9923D /* MainRouter.swift in Sources */,
-				E316F8E12B1F5395007D2945 /* LoginViewController.swift in Sources */,
 				E3B9718D2BACCC0F005D5CB6 /* TabBarContoller.swift in Sources */,
-				E366B6412BACDFE100D9923D /* StackContainerView.swift in Sources */,
 				E319BA442B6BFF6400190321 /* Assembly.swift in Sources */,
-				E366B6462BACE06500D9923D /* SwipeCardView.swift in Sources */,
 				E316F8DC2B1F4FF7007D2945 /* AppDelegate+Root.swift in Sources */,
-				E366B63F2BACDDB800D9923D /* SwipeCardsDataSource.swift in Sources */,
 				E3F0D8292B1FB54000877580 /* RootViewController.swift in Sources */,
-				E366B63B2BACDC7300D9923D /* MainViewController.swift in Sources */,
 				E3DCF4832B6AD80C00057BEB /* Mode.swift in Sources */,
 				E3F0D8252B1FB54000877580 /* AppDelegate.swift in Sources */,
 				E319BA3C2B6BC57300190321 /* FlowCoordinator.swift in Sources */,
 				E3F0D8272B1FB54000877580 /* SceneDelegate.swift in Sources */,
-				E366B6392BACDC7300D9923D /* MainPresenter.swift in Sources */,
 				E3F0C6CE2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift in Sources */,
 				E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */,
-				E366B63C2BACDC7300D9923D /* MainModuleConfigurator.swift in Sources */,
 				E316F8DE2B1F52EE007D2945 /* SplashViewController.swift in Sources */,
 				E3B9718F2BACCC65005D5CB6 /* TabBar.Item.swift in Sources */,
-				E366B6442BACE02200D9923D /* CardsDataModel.swift in Sources */,
+				E3D13F842BB059F900ED374D /* TabBar.Fabric.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +552,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = CDUIKit;
 		};
+		E3D13F872BB05BF300ED374D /* XCLocalSwiftPackageReference "Place" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Place;
+		};
 		E3F0C6D32B6962AA00AB6A64 /* XCLocalSwiftPackageReference "Authorization" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Authorization;
@@ -628,6 +593,14 @@
 		E3B40FA82B6681C3006F2316 /* CDUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CDUIKit;
+		};
+		E3D13F852BB05BE000ED374D /* Place */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Place;
+		};
+		E3D13F882BB05BF300ED374D /* Place */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Place;
 		};
 		E3DCF4792B6ACE4500057BEB /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

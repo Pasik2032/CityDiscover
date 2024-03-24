@@ -15,4 +15,9 @@ protocol SwipeCardsDataSource {
 
 protocol SwipeCardsDelegate {
   func swipeDidEnd(on view: SwipeCardView)
+  func cardDidPressed(id: Int)
+}
+
+protocol StackContainerDelegate: AnyObject {
+  func cardDidPressed(id: Int)
 }

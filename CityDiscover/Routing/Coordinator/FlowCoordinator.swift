@@ -8,14 +8,21 @@
 import Authorization
 import Foundation
 import UIKit
+import Place
+import CDUIKit
 
 final class FlowCoordinator {
   private var root: RootViewController!
 
   private let authorization: AuthorizationProtocol
+  private let placeService: PlaceServicePublicProtocol
 
-  init(authorization: AuthorizationProtocol) {
+  init(
+    authorization: AuthorizationProtocol,
+    placeService: PlaceServicePublicProtocol
+  ) {
     self.authorization = authorization
+    self.placeService = placeService
   }
 }
 
@@ -24,22 +31,29 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
     self.root = root
     Task { @MainActor in
       if await authorization.isLogin {
-        userDidLogin()
+        showMain()
       } else {
         let vc = authorization.login(output: self)
         self.root.show(vc)
       }
     }
-//    DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-//    let vc = authorization.login(output: self)
-//      self.root.show(vc)
-//    }
+  }
+
+  private func showMain() {
+    Task { @MainActor in
+      do {
+        try await placeService.dowloadInitPlaces()
+        let vc = TabBarController()
+        self.root.show(vc)
+      } catch {
+        Alert.show(title: "Ошибка!", descriptions: "Извините произошла ошибка")
+      }
+    }
   }
 }
 
 extension FlowCoordinator: LoginOutput {
   func userDidLogin() {
-    let vc = TabBarController()
-    self.root.show(vc)
+    showMain()
   }
 }

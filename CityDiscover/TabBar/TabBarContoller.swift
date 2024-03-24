@@ -9,7 +9,7 @@ import UIKit
 
 final class TabBarController: UITabBarController {
 
-//  private let backView = UIView()
+  private let fabric = TabBar.Fabric()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,25 +33,9 @@ final class TabBarController: UITabBarController {
   private func setupTabBar() {
     let dataSource: [TabBar.Item] = [.collection, .map, .main, .profile]
     self.viewControllers = dataSource.map {
-      switch $0 {
-      case .main:
-        let feedViewController = MainViewController()
-        feedViewController.view.backgroundColor = .clear
-        return self.wrappedInNavigationController(with: feedViewController, title: $0.title)
-      case .profile:
-        let profileViewController = UIViewController()
-        profileViewController.view.backgroundColor = .clear
-        return self.wrappedInNavigationController(with: profileViewController, title: $0.title)
-      case .map:
-        let profileViewController = UIViewController()
-        profileViewController.view.backgroundColor = .clear
-        return self.wrappedInNavigationController(with: profileViewController, title: $0.title)
-      case .collection:
-        let profileViewController = UIViewController()
-        profileViewController.view.backgroundColor = .clear
-        return self.wrappedInNavigationController(with: profileViewController, title: $0.title)
-      }
+       self.wrappedInNavigationController(with: fabric.create($0), title: $0.title)
     }
+
     self.viewControllers?.enumerated().forEach {
       $1.tabBarItem.title = nil
       $1.tabBarItem.image = UIImage(systemName: dataSource[$0].iconName)
