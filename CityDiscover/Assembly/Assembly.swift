@@ -16,6 +16,7 @@ public final class Assembly {
     AuthorizationAssembly(),
     NetworkingAssembly(),
     PlaceAssembly(),
+    ProfileModuleAssembly(),
   ]
 
   private static let container = Container()

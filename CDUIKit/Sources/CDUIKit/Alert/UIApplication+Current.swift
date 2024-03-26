@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIApplication {
+public extension UIApplication {
   class func getPresentedViewController() -> UIViewController? {
     var presentViewController = UIApplication.shared.keyWindow?.rootViewController
     while let pVC = presentViewController?.presentedViewController {

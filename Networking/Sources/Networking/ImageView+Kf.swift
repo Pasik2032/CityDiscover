@@ -13,4 +13,12 @@ public extension UIImageView {
     guard let url = URL(string: url) else { return }
     kf.setImage(with: url)
   }
+
+  func setImage(url: String, completion: @escaping (UIImage?) -> Void) {
+    guard let url = URL(string: url) else { return }
+    kf.setImage(with: url) { result in
+      let image = try? result.get()
+      completion(image?.image)
+    }
+  }
 }

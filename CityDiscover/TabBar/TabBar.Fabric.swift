@@ -12,12 +12,21 @@ import Place
 extension TabBar {
   final class Fabric {
 
+    private let output: TabBarOutput
     private let resolver: Resolver = Assembly.resolver
 
+    init(output: TabBarOutput) {
+      self.output = output
+    }
+
     func create(_ item: Item) -> UIViewController {
-      switch item {
+      let profileOutput: ProfileModuleOutput = output
+      return switch item {
       case .main: resolver.resolve(MainPlace.self)!.view
-      case .collection, .profile, .map, .add: UIViewController()
+      case .profile: resolver.resolve(ProfileViewController.self, argument: profileOutput)!
+      case .add: resolver.resolve(AppendViewController.self)!
+      case .map: MapViewController()
+      case .collection: UIViewController()
       }
     }
   }

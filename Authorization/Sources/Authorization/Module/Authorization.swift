@@ -28,4 +28,8 @@ extension Authorization: AuthorizationProtocol {
       await tokenService.start()
     }
   }
+
+  public func exit() {
+    tokenService.exit()
+  }
 }

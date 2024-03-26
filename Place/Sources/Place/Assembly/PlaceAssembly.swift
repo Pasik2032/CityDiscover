@@ -12,6 +12,7 @@ public struct PlaceAssembly: Swinject.Assembly {
     MainAssembly(),
     PlaceServiceAssembly(),
     DetailAssembly(),
+    AppendAssembly(),
   ]
 
   public func assemble(container: Swinject.Container) {

@@ -13,6 +13,12 @@
 		E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */; };
 		E319BA442B6BFF6400190321 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA432B6BFF6400190321 /* Assembly.swift */; };
 		E39CE4DE2B7C12DE00928201 /* Animation in Frameworks */ = {isa = PBXBuildFile; productRef = E39CE4DD2B7C12DE00928201 /* Animation */; };
+		E39FF9432BB211530077F29B /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF93F2BB211530077F29B /* ProfilePresenter.swift */; };
+		E39FF9442BB211530077F29B /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF9402BB211530077F29B /* ProfileRouter.swift */; };
+		E39FF9452BB211530077F29B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF9412BB211530077F29B /* ProfileViewController.swift */; };
+		E39FF9462BB211530077F29B /* ProfileModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF9422BB211530077F29B /* ProfileModuleAssembly.swift */; };
+		E39FF94B2BB2135D0077F29B /* TabBarOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF94A2BB2135D0077F29B /* TabBarOutput.swift */; };
+		E39FF94D2BB223EB0077F29B /* ProfileSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF94C2BB223EB0077F29B /* ProfileSections.swift */; };
 		E3B40FA52B668152006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA42B668152006F2316 /* CDUIKit */; };
 		E3B40FA92B6681C3006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA82B6681C3006F2316 /* CDUIKit */; };
 		E3B9718D2BACCC0F005D5CB6 /* TabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B9718C2BACCC0F005D5CB6 /* TabBarContoller.swift */; };
@@ -40,6 +46,12 @@
 		E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		E319BA432B6BFF6400190321 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		E39CE4DB2B7C0F7500928201 /* Animation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Animation; sourceTree = "<group>"; };
+		E39FF93F2BB211530077F29B /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		E39FF9402BB211530077F29B /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		E39FF9412BB211530077F29B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E39FF9422BB211530077F29B /* ProfileModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModuleAssembly.swift; sourceTree = "<group>"; };
+		E39FF94A2BB2135D0077F29B /* TabBarOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarOutput.swift; sourceTree = "<group>"; };
+		E39FF94C2BB223EB0077F29B /* ProfileSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSections.swift; sourceTree = "<group>"; };
 		E3B40FA62B6681AC006F2316 /* CDUIKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDUIKit; sourceTree = SOURCE_ROOT; };
 		E3B9718C2BACCC0F005D5CB6 /* TabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContoller.swift; sourceTree = "<group>"; };
 		E3B9718E2BACCC65005D5CB6 /* TabBar.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.Item.swift; sourceTree = "<group>"; };
@@ -156,12 +168,49 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		E39FF93E2BB211320077F29B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E39FF9492BB211BB0077F29B /* Router */,
+				E39FF9482BB211B20077F29B /* Presenter */,
+				E39FF9472BB211A80077F29B /* View */,
+				E39FF9422BB211530077F29B /* ProfileModuleAssembly.swift */,
+				E39FF94C2BB223EB0077F29B /* ProfileSections.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E39FF9472BB211A80077F29B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E39FF9412BB211530077F29B /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E39FF9482BB211B20077F29B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E39FF93F2BB211530077F29B /* ProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E39FF9492BB211BB0077F29B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E39FF9402BB211530077F29B /* ProfileRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		E3B9718B2BACCBEF005D5CB6 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				E3B9718C2BACCC0F005D5CB6 /* TabBarContoller.swift */,
 				E3B9718E2BACCC65005D5CB6 /* TabBar.Item.swift */,
 				E3D13F832BB059F900ED374D /* TabBar.Fabric.swift */,
+				E39FF94A2BB2135D0077F29B /* TabBarOutput.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -214,6 +263,7 @@
 		E3F0D8232B1FB54000877580 /* CityDiscover */ = {
 			isa = PBXGroup;
 			children = (
+				E39FF93E2BB211320077F29B /* Profile */,
 				E366B6342BACDC3700D9923D /* Main */,
 				E3B9718B2BACCBEF005D5CB6 /* TabBar */,
 				E319BA422B6BFF6400190321 /* Assembly */,
@@ -317,15 +367,21 @@
 			files = (
 				E3B9718D2BACCC0F005D5CB6 /* TabBarContoller.swift in Sources */,
 				E319BA442B6BFF6400190321 /* Assembly.swift in Sources */,
+				E39FF94B2BB2135D0077F29B /* TabBarOutput.swift in Sources */,
 				E316F8DC2B1F4FF7007D2945 /* AppDelegate+Root.swift in Sources */,
 				E3F0D8292B1FB54000877580 /* RootViewController.swift in Sources */,
 				E3DCF4832B6AD80C00057BEB /* Mode.swift in Sources */,
 				E3F0D8252B1FB54000877580 /* AppDelegate.swift in Sources */,
+				E39FF9452BB211530077F29B /* ProfileViewController.swift in Sources */,
+				E39FF94D2BB223EB0077F29B /* ProfileSections.swift in Sources */,
 				E319BA3C2B6BC57300190321 /* FlowCoordinator.swift in Sources */,
 				E3F0D8272B1FB54000877580 /* SceneDelegate.swift in Sources */,
 				E3F0C6CE2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift in Sources */,
+				E39FF9442BB211530077F29B /* ProfileRouter.swift in Sources */,
 				E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */,
+				E39FF9432BB211530077F29B /* ProfilePresenter.swift in Sources */,
 				E316F8DE2B1F52EE007D2945 /* SplashViewController.swift in Sources */,
+				E39FF9462BB211530077F29B /* ProfileModuleAssembly.swift in Sources */,
 				E3B9718F2BACCC65005D5CB6 /* TabBar.Item.swift in Sources */,
 				E3D13F842BB059F900ED374D /* TabBar.Fabric.swift in Sources */,
 			);

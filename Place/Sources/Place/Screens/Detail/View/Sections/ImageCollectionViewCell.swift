@@ -26,15 +26,38 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
+  func setup(image: UIImage) {
+    imageView.image = image
+    let ratio = image.size.width / image.size.height
+    self.layoutIfNeeded()
+    let newWidth = 150.0 * ratio
+    self.imageView.snp.updateConstraints { make in
+      make.width.equalTo(newWidth)
+      make.height.equalTo(150.0)
+      make.edges.equalToSuperview()
+    }
+    self.invalidateIntrinsicContentSize()
+    self.layoutIfNeeded()
+  }
+
   func setup(image: String) {
-    imageView.setImage(url: image)
+    imageView.setImage(url: image) { image in
+      guard let image else { return }
+      let ratio = image.size.width / image.size.height
+      self.layoutIfNeeded()
+      let newWidth = 150.0 * ratio
+      self.imageView.snp.updateConstraints { make in
+        make.width.equalTo(newWidth)
+        make.height.equalTo(150.0)
+        make.edges.equalToSuperview()
+      }
+      self.invalidateIntrinsicContentSize()
+      self.layoutIfNeeded()
+    }
   }
 
   private func setupUI() {
     self.layer.cornerRadius = 15.0
     contentView.addSubview(imageView)
-    imageView.snp.makeConstraints {
-      $0.edges.equalToSuperview()
-    }
   }
 }

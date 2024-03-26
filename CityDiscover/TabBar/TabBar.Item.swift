@@ -19,7 +19,7 @@ extension TabBar {
 
     var title: String {
       switch self {
-      case .add: ""
+      case .add: "Добавить"
       case .main: "Главная"
       case .profile: "Профиль"
       case .map: "Карта"

@@ -10,4 +10,5 @@ import UIKit
 public protocol AuthorizationProtocol {
   func login(output: LoginOutput) -> UIViewController
   var isLogin: Bool { get async }
+  func exit()
 }

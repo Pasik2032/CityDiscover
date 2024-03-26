@@ -1,25 +1,20 @@
 //
-//  DetailViewController.swift
-//  CityDiscover
+//  MapDetailViewController.swift
+//  
 //
-//  Created Даниил Пасилецкий on 24.03.2024.
-//  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
+//  Created by Даниил Пасилецкий on 26.03.2024.
 //
 
-import UIKit
 import CDUIKit
+import UIKit
 
-protocol DetailViewInput: AnyObject {
-  func update()
-}
+final class MapDetailViewController: UIViewController {
 
-protocol DetailViewOutput: AnyObject, DetailDataDelegate {
-  func viewDidLoad()
-  var section: [DetailSection] { get }
-}
-
-
-final class DetailViewController: UIViewController {
+  var section: [DetailSection] = [] {
+    didSet {
+      tableView.reloadData()
+    }
+  }
 
   // MARK: - UI
 
@@ -66,21 +61,14 @@ final class DetailViewController: UIViewController {
   }
 }
 
-// MARK: - DetailViewInput
 
-extension DetailViewController: DetailViewInput {
-  func update() {
-    tableView.reloadData()
-  }
-}
-
-extension DetailViewController: UITableViewDataSource {
+extension MapDetailViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    presenter?.section.count ?? .zero
+    self.section.count
   }
-  
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let section = presenter?.section[indexPath.row] else { return UITableViewCell() }
+    let section = section[indexPath.row]
     switch section {
     case .map(let coordinate):
       let cell: DetailMapTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)

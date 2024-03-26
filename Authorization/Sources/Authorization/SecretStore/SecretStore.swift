@@ -35,4 +35,11 @@ extension SecretStore: SecretStoreProtocol {
     }
     try KeychainInterface.update(password: data, service: service, account: key.rawValue)
   }
+
+  func delete(key: Key) throws {
+    guard let data = "".data(using: .utf8) else {
+      throw KeychainInterface.KeychainError.invalidItemFormat
+    }
+    try KeychainInterface.update(password: data, service: service, account: key.rawValue)
+  }
 }

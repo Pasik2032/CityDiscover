@@ -43,7 +43,7 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
     Task { @MainActor in
       do {
         try await placeService.dowloadInitPlaces()
-        let vc = TabBarController()
+        let vc = TabBarController(output: self)
         self.root.show(vc)
       } catch {
         Alert.show(title: "Ошибка!", descriptions: "Извините произошла ошибка")
@@ -55,5 +55,12 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
 extension FlowCoordinator: LoginOutput {
   func userDidLogin() {
     showMain()
+  }
+}
+
+extension FlowCoordinator: TabBarOutput {
+  func userDidExit() {
+    let vc = authorization.login(output: self)
+    self.root.show(vc)
   }
 }

@@ -14,7 +14,7 @@ final class DetailImageTableViewCell: UITableViewCell {
   private lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .horizontal
-    layout.itemSize = .init(width: 300, height: 150)
+    layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.dataSource = self
     collectionView.backgroundColor = .clear
@@ -26,6 +26,8 @@ final class DetailImageTableViewCell: UITableViewCell {
   }()
 
   private var images: [String] = []
+
+  private var images2: [UIImage] = []
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -51,16 +53,25 @@ final class DetailImageTableViewCell: UITableViewCell {
     self.images = images
     collectionView.reloadData()
   }
+
+  func setup(images: [UIImage]) {
+    self.images2 = images
+    collectionView.reloadData()
+  }
 }
 
 extension DetailImageTableViewCell: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    images.count
+    images.count == 0 ? images2.count : images.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: ImageCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
-    cell.setup(image: images[indexPath.row])
+    if images.count != 0 {
+      cell.setup(image: images[indexPath.row])
+    } else {
+      cell.setup(image: images2[indexPath.row])
+    }
     return cell
   }
 }

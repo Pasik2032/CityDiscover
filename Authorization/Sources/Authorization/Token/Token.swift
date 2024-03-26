@@ -12,6 +12,7 @@ import Foundation
 protocol TokenProtocol {
   func setupToken(_ model: Token.Model)
   func start() async -> Bool
+  func exit()
 }
 
 final class Token {
@@ -27,8 +28,12 @@ final class Token {
 }
 
 extension Token: TokenProtocol {
+  func exit() {
+    try? secretStore.delete(key: .token)
+  }
+
   func start() async -> Bool {
-    guard let token = try? secretStore.get(.token) else { return false }
+    guard let token = try? secretStore.get(.token), !token.isEmpty else { return false }
     return await update(refreshToken: token)
   }
   
