@@ -12,18 +12,19 @@
 		E319BA3C2B6BC57300190321 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA3B2B6BC57300190321 /* FlowCoordinator.swift */; };
 		E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */; };
 		E319BA442B6BFF6400190321 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319BA432B6BFF6400190321 /* Assembly.swift */; };
+		E38221C12BF12594009A75BB /* CDFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = E38221C02BF12594009A75BB /* CDFoundation */; };
+		E38221C52BF12B19009A75BB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38221C42BF12B19009A75BB /* main.swift */; };
+		E38221C72BF12D9D009A75BB /* CityDiscoverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38221C62BF12D9D009A75BB /* CityDiscoverApp.swift */; };
+		E38221CB2BF133B4009A75BB /* Modules in Frameworks */ = {isa = PBXBuildFile; productRef = E38221CA2BF133B4009A75BB /* Modules */; };
 		E39CE4DE2B7C12DE00928201 /* Animation in Frameworks */ = {isa = PBXBuildFile; productRef = E39CE4DD2B7C12DE00928201 /* Animation */; };
 		E39FF9432BB211530077F29B /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF93F2BB211530077F29B /* ProfilePresenter.swift */; };
 		E39FF9442BB211530077F29B /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF9402BB211530077F29B /* ProfileRouter.swift */; };
 		E39FF9452BB211530077F29B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF9412BB211530077F29B /* ProfileViewController.swift */; };
 		E39FF9462BB211530077F29B /* ProfileModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF9422BB211530077F29B /* ProfileModuleAssembly.swift */; };
-		E39FF94B2BB2135D0077F29B /* TabBarOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF94A2BB2135D0077F29B /* TabBarOutput.swift */; };
 		E39FF94D2BB223EB0077F29B /* ProfileSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF94C2BB223EB0077F29B /* ProfileSections.swift */; };
 		E3B40FA52B668152006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA42B668152006F2316 /* CDUIKit */; };
 		E3B40FA92B6681C3006F2316 /* CDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3B40FA82B6681C3006F2316 /* CDUIKit */; };
 		E3B9718D2BACCC0F005D5CB6 /* TabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B9718C2BACCC0F005D5CB6 /* TabBarContoller.swift */; };
-		E3B9718F2BACCC65005D5CB6 /* TabBar.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B9718E2BACCC65005D5CB6 /* TabBar.Item.swift */; };
-		E3D13F842BB059F900ED374D /* TabBar.Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D13F832BB059F900ED374D /* TabBar.Fabric.swift */; };
 		E3D13F862BB05BE000ED374D /* Place in Frameworks */ = {isa = PBXBuildFile; productRef = E3D13F852BB05BE000ED374D /* Place */; };
 		E3D13F892BB05BF300ED374D /* Place in Frameworks */ = {isa = PBXBuildFile; productRef = E3D13F882BB05BF300ED374D /* Place */; };
 		E3DCF47A2B6ACE4500057BEB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3DCF4792B6ACE4500057BEB /* SnapKit */; };
@@ -45,19 +46,25 @@
 		E319BA3B2B6BC57300190321 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		E319BA3D2B6BC61900190321 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		E319BA432B6BFF6400190321 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		E38196552BF13E8600A900CF /* ArchTool */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ArchTool; sourceTree = "<group>"; };
+		E38221BE2BF11BF2009A75BB /* CDFoundation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CDFoundation; sourceTree = "<group>"; };
+		E38221C42BF12B19009A75BB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E38221C62BF12D9D009A75BB /* CityDiscoverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDiscoverApp.swift; sourceTree = "<group>"; };
+		E38221C82BF1313A009A75BB /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 		E39CE4DB2B7C0F7500928201 /* Animation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Animation; sourceTree = "<group>"; };
 		E39FF93F2BB211530077F29B /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		E39FF9402BB211530077F29B /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		E39FF9412BB211530077F29B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E39FF9422BB211530077F29B /* ProfileModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModuleAssembly.swift; sourceTree = "<group>"; };
-		E39FF94A2BB2135D0077F29B /* TabBarOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarOutput.swift; sourceTree = "<group>"; };
 		E39FF94C2BB223EB0077F29B /* ProfileSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSections.swift; sourceTree = "<group>"; };
 		E3B40FA62B6681AC006F2316 /* CDUIKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CDUIKit; sourceTree = SOURCE_ROOT; };
 		E3B9718C2BACCC0F005D5CB6 /* TabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContoller.swift; sourceTree = "<group>"; };
-		E3B9718E2BACCC65005D5CB6 /* TabBar.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.Item.swift; sourceTree = "<group>"; };
 		E3BB76092BA762F400937E00 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
+		E3C3FBEA2BFA5443003A584B /* SecretStore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SecretStore; sourceTree = "<group>"; };
+		E3C3FBED2BFA5A49003A584B /* Map */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Map; sourceTree = "<group>"; };
+		E3C3FBEE2BFA5A63003A584B /* Game */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Game; sourceTree = "<group>"; };
+		E3C3FBEF2BFA5A84003A584B /* User */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = User; sourceTree = "<group>"; };
 		E3D13F822BB0576700ED374D /* Place */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Place; sourceTree = "<group>"; };
-		E3D13F832BB059F900ED374D /* TabBar.Fabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.Fabric.swift; sourceTree = "<group>"; };
 		E3DCF4822B6AD80C00057BEB /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		E3F0C6CD2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.Assembly.swift; sourceTree = "<group>"; };
 		E3F0C6CF2B695E1100AB6A64 /* Authorization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Authorization; sourceTree = "<group>"; };
@@ -75,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E38221C12BF12594009A75BB /* CDFoundation in Frameworks */,
+				E38221CB2BF133B4009A75BB /* Modules in Frameworks */,
 				E3B40FA92B6681C3006F2316 /* CDUIKit in Frameworks */,
 				E3F0C6CC2B69584D00AB6A64 /* Swinject in Frameworks */,
 				E3D13F862BB05BE000ED374D /* Place in Frameworks */,
@@ -90,13 +99,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E319BA332B6AE2AB00190321 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
 		E319BA342B6AE2B700190321 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +123,8 @@
 				E3F0D8322B1FB54200877580 /* Info.plist */,
 				E3F0D8262B1FB54000877580 /* SceneDelegate.swift */,
 				E3F0D8242B1FB54000877580 /* AppDelegate.swift */,
+				E38221C62BF12D9D009A75BB /* CityDiscoverApp.swift */,
+				E38221C42BF12B19009A75BB /* main.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -159,13 +163,6 @@
 				E319BA432B6BFF6400190321 /* Assembly.swift */,
 			);
 			path = Assembly;
-			sourceTree = "<group>";
-		};
-		E366B6342BACDC3700D9923D /* Main */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		E39FF93E2BB211320077F29B /* Profile */ = {
@@ -208,11 +205,34 @@
 			isa = PBXGroup;
 			children = (
 				E3B9718C2BACCC0F005D5CB6 /* TabBarContoller.swift */,
-				E3B9718E2BACCC65005D5CB6 /* TabBar.Item.swift */,
-				E3D13F832BB059F900ED374D /* TabBar.Fabric.swift */,
-				E39FF94A2BB2135D0077F29B /* TabBarOutput.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		E3C3FBEB2BFA59D9003A584B /* LC */ = {
+			isa = PBXGroup;
+			children = (
+				E3C3FBEA2BFA5443003A584B /* SecretStore */,
+				E38196552BF13E8600A900CF /* ArchTool */,
+				E38221C82BF1313A009A75BB /* Modules */,
+				E38221BE2BF11BF2009A75BB /* CDFoundation */,
+				E3BB76092BA762F400937E00 /* Networking */,
+				E39CE4DB2B7C0F7500928201 /* Animation */,
+				E3B40FA62B6681AC006F2316 /* CDUIKit */,
+			);
+			name = LC;
+			sourceTree = "<group>";
+		};
+		E3C3FBEC2BFA59EF003A584B /* L2 */ = {
+			isa = PBXGroup;
+			children = (
+				E3C3FBEF2BFA5A84003A584B /* User */,
+				E3C3FBEE2BFA5A63003A584B /* Game */,
+				E3C3FBED2BFA5A49003A584B /* Map */,
+				E3D13F822BB0576700ED374D /* Place */,
+				E3F0C6CF2B695E1100AB6A64 /* Authorization */,
+			);
+			name = L2;
 			sourceTree = "<group>";
 		};
 		E3DCF47B2B6AD5FB00057BEB /* UI */ = {
@@ -241,11 +261,8 @@
 		E3F0D8182B1FB53F00877580 = {
 			isa = PBXGroup;
 			children = (
-				E3D13F822BB0576700ED374D /* Place */,
-				E3BB76092BA762F400937E00 /* Networking */,
-				E39CE4DB2B7C0F7500928201 /* Animation */,
-				E3F0C6CF2B695E1100AB6A64 /* Authorization */,
-				E3B40FA62B6681AC006F2316 /* CDUIKit */,
+				E3C3FBEB2BFA59D9003A584B /* LC */,
+				E3C3FBEC2BFA59EF003A584B /* L2 */,
 				E3F0D8232B1FB54000877580 /* CityDiscover */,
 				E3F0D8222B1FB54000877580 /* Products */,
 				E3F0C6D02B69628F00AB6A64 /* Frameworks */,
@@ -264,13 +281,11 @@
 			isa = PBXGroup;
 			children = (
 				E39FF93E2BB211320077F29B /* Profile */,
-				E366B6342BACDC3700D9923D /* Main */,
 				E3B9718B2BACCBEF005D5CB6 /* TabBar */,
 				E319BA422B6BFF6400190321 /* Assembly */,
 				E319BA362B6AE36100190321 /* System */,
 				E319BA352B6AE30B00190321 /* Resources */,
 				E319BA342B6AE2B700190321 /* Routing */,
-				E319BA332B6AE2AB00190321 /* Module */,
 				E3DCF47B2B6AD5FB00057BEB /* UI */,
 			);
 			path = CityDiscover;
@@ -302,6 +317,8 @@
 				E39CE4DD2B7C12DE00928201 /* Animation */,
 				E3D13F852BB05BE000ED374D /* Place */,
 				E3D13F882BB05BF300ED374D /* Place */,
+				E38221C02BF12594009A75BB /* CDFoundation */,
+				E38221CA2BF133B4009A75BB /* Modules */,
 			);
 			productName = CityDiscover;
 			productReference = E3F0D8212B1FB54000877580 /* CityDiscover.app */;
@@ -338,6 +355,8 @@
 				E3F0C6D32B6962AA00AB6A64 /* XCLocalSwiftPackageReference "Authorization" */,
 				E39CE4DC2B7C12DE00928201 /* XCLocalSwiftPackageReference "Animation" */,
 				E3D13F872BB05BF300ED374D /* XCLocalSwiftPackageReference "Place" */,
+				E38221BF2BF12594009A75BB /* XCLocalSwiftPackageReference "CDFoundation" */,
+				E38221C92BF133B4009A75BB /* XCLocalSwiftPackageReference "Modules" */,
 			);
 			productRefGroup = E3F0D8222B1FB54000877580 /* Products */;
 			projectDirPath = "";
@@ -367,23 +386,22 @@
 			files = (
 				E3B9718D2BACCC0F005D5CB6 /* TabBarContoller.swift in Sources */,
 				E319BA442B6BFF6400190321 /* Assembly.swift in Sources */,
-				E39FF94B2BB2135D0077F29B /* TabBarOutput.swift in Sources */,
 				E316F8DC2B1F4FF7007D2945 /* AppDelegate+Root.swift in Sources */,
 				E3F0D8292B1FB54000877580 /* RootViewController.swift in Sources */,
 				E3DCF4832B6AD80C00057BEB /* Mode.swift in Sources */,
 				E3F0D8252B1FB54000877580 /* AppDelegate.swift in Sources */,
 				E39FF9452BB211530077F29B /* ProfileViewController.swift in Sources */,
+				E38221C52BF12B19009A75BB /* main.swift in Sources */,
 				E39FF94D2BB223EB0077F29B /* ProfileSections.swift in Sources */,
 				E319BA3C2B6BC57300190321 /* FlowCoordinator.swift in Sources */,
 				E3F0D8272B1FB54000877580 /* SceneDelegate.swift in Sources */,
 				E3F0C6CE2B695AA200AB6A64 /* FlowCoordinator.Assembly.swift in Sources */,
+				E38221C72BF12D9D009A75BB /* CityDiscoverApp.swift in Sources */,
 				E39FF9442BB211530077F29B /* ProfileRouter.swift in Sources */,
 				E319BA3E2B6BC61900190321 /* FlowCoordinatorProtocol.swift in Sources */,
 				E39FF9432BB211530077F29B /* ProfilePresenter.swift in Sources */,
 				E316F8DE2B1F52EE007D2945 /* SplashViewController.swift in Sources */,
 				E39FF9462BB211530077F29B /* ProfileModuleAssembly.swift in Sources */,
-				E3B9718F2BACCC65005D5CB6 /* TabBar.Item.swift in Sources */,
-				E3D13F842BB059F900ED374D /* TabBar.Fabric.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.project.CityDiscover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -567,7 +585,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.project.CityDiscover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -600,6 +618,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		E38221BF2BF12594009A75BB /* XCLocalSwiftPackageReference "CDFoundation" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = CDFoundation;
+		};
+		E38221C92BF133B4009A75BB /* XCLocalSwiftPackageReference "Modules" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Modules;
+		};
 		E39CE4DC2B7C12DE00928201 /* XCLocalSwiftPackageReference "Animation" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Animation;
@@ -638,6 +664,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E38221C02BF12594009A75BB /* CDFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CDFoundation;
+		};
+		E38221CA2BF133B4009A75BB /* Modules */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Modules;
+		};
 		E39CE4DD2B7C12DE00928201 /* Animation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Animation;

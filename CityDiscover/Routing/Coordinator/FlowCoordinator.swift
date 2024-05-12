@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Place
 import CDUIKit
+import CDFoundation
 
 final class FlowCoordinator {
   private var root: RootViewController!
@@ -17,12 +18,16 @@ final class FlowCoordinator {
   private let authorization: AuthorizationProtocol
   private let placeService: PlaceServicePublicProtocol
 
+  private let transitionCoordinator: TransitionCoordinatorProtocol
+
   init(
     authorization: AuthorizationProtocol,
-    placeService: PlaceServicePublicProtocol
+    placeService: PlaceServicePublicProtocol,
+    transitionCoordinator: TransitionCoordinatorProtocol
   ) {
     self.authorization = authorization
     self.placeService = placeService
+    self.transitionCoordinator = transitionCoordinator
   }
 }
 
@@ -43,7 +48,7 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
     Task { @MainActor in
       do {
         try await placeService.dowloadInitPlaces()
-        let vc = TabBarController(output: self)
+        let vc = TabBarController(provider: TransitionStore.shared)
         self.root.show(vc)
       } catch {
         Alert.show(title: "Ошибка!", descriptions: "Извините произошла ошибка")
@@ -58,8 +63,8 @@ extension FlowCoordinator: LoginOutput {
   }
 }
 
-extension FlowCoordinator: TabBarOutput {
-  func userDidExit() {
+extension FlowCoordinator: MainCoordinatorProtocol {
+  func userExit() {
     let vc = authorization.login(output: self)
     self.root.show(vc)
   }

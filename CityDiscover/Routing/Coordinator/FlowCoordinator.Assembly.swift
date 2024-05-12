@@ -8,6 +8,7 @@
 import Swinject
 import Authorization
 import Place
+import CDFoundation
 
 extension FlowCoordinator {
   struct Assembly: Swinject.Assembly {
@@ -15,9 +16,14 @@ extension FlowCoordinator {
       container.register(FlowCoordinatorProtocol.self) {
         FlowCoordinator(
           authorization: $0.resolve(AuthorizationProtocol.self)!,
-          placeService: $0.resolve(PlaceServicePublicProtocol.self)!
+          placeService: $0.resolve(PlaceServicePublicProtocol.self)!, 
+          transitionCoordinator: $0.resolve(TransitionCoordinatorProtocol.self)!
         )
       }.inObjectScope(.container)
+
+      container.register(MainCoordinatorProtocol.self) {
+        $0.resolve(FlowCoordinatorProtocol.self)!
+      }
     }
   }
 }

@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import CDFoundation
 
-protocol FlowCoordinatorProtocol {
+protocol FlowCoordinatorProtocol: MainCoordinatorProtocol {
   func start(in root: RootViewController)
 }

@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import CDFoundation
 
 final class TabBarController: UITabBarController {
 
-  private let fabric: TabBar.Fabric
+  private let provider: TabBarItemProvider
 
-  init(output: TabBarOutput) {
-    fabric = TabBar.Fabric(output: output)
+  init(provider: TabBarItemProvider) {
+    self.provider = provider
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -40,14 +41,17 @@ final class TabBarController: UITabBarController {
   }
 
   private func setupTabBar() {
-    let dataSource: [TabBar.Item] = [.collection, .map, .add, .main, .profile]
+    let dataSource = provider.tabBarItemEndPoinds().sorted {
+      $0.priority < $1.priority
+    }
+
     self.viewControllers = dataSource.map {
-       self.wrappedInNavigationController(with: fabric.create($0), title: $0.title)
+      self.wrappedInNavigationController(with: $0.vc, title: $0.title)
     }
 
     self.viewControllers?.enumerated().forEach {
       $1.tabBarItem.title = dataSource[$0].title
-      $1.tabBarItem.image = UIImage(systemName: dataSource[$0].iconName)
+      $1.tabBarItem.image = UIImage(systemName: dataSource[$0].icon)
       $1.tabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
     }
   }

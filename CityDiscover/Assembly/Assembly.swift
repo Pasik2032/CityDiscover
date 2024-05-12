@@ -11,6 +11,11 @@ import Networking
 import Place
 
 public final class Assembly {
+
+  static func createAssembler(assemblies: [Swinject.Assembly]) {
+    assembler = Assembler(assemblies + self.assemblies, container: container)
+  }
+
   private static let assemblies: [Swinject.Assembly] = [
     FlowCoordinator.Assembly(),
     AuthorizationAssembly(),
@@ -20,7 +25,7 @@ public final class Assembly {
   ]
 
   private static let container = Container()
-  private static let assembler = Assembler(assemblies, container: container)
+  private static var assembler: Assembler!
 
   static let resolver = (assembler.resolver as! Container).synchronize()
 }

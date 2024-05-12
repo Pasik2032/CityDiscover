@@ -38,23 +38,17 @@ extension NetworkingService: NetworkingProtocol {
       urlRequest.httpBody = parameters
     }
     let (data, response) = try await URLSession.shared.data(for: urlRequest)
-    print("result \(response)")
 
     if (response as? HTTPURLResponse)?.statusCode != 200 {
       guard let model = try? decoder.decode(BaseModel<ErrorModel>.self, from: data) else { throw NetworkingModule.Errors.parsing }
       throw NetworkingModule.Errors.failer(message: model.response.message)
     }
-    print("good \(endpoint.javaService)")
 
     if endpoint.javaService {
-      print("parseer")
       guard let model = try? decoder.decode(BaseModel<T.Response>.self, from: data) else { throw NetworkingModule.Errors.parsing }
-      print("parse")
       return model.response
     } else {
-      print("Response")
       guard let model = try? decoder.decode(T.Response.self, from: data) else { throw NetworkingModule.Errors.parsing }
-      print("Response \(model)")
       return model
     }
   }
